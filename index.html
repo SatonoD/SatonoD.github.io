@@ -117,15 +117,18 @@
 如果pre的right指针指向cur，让其指向空（per.right = None），cur向右移动（cur=cur.right）
 实现以上的原则，即实现了morris遍历。
 </code></pre>
-<p>本质上，Morris 遍历利用了左子树的空余节点，对于没有左子树的节点只到达一次，对于有左子树的节点会到达两次。</p>
 <p>那么上面这道题就可以转化为如何利用Morris 遍历实现前序遍历</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">preorderTraversal</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="comment"># 建立当前指针</span></span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="comment"># 建立寻找前驱节点的指针</span></span><br><span class="line">            pre = cur.left</span><br><span class="line">            <span class="keyword">if</span> pre:</span><br><span class="line">                <span class="comment"># 找到的标准以及对应的可能结果</span></span><br><span class="line">                <span class="keyword">while</span> pre.right <span class="keyword">and</span> pre.right != cur:</span><br><span class="line">                    pre = pre.right</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> pre.right:</span><br><span class="line">                    res.append(cur.val)</span><br><span class="line">                    pre.right = cur</span><br><span class="line">                    cur = cur.left</span><br><span class="line"></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    pre.right = <span class="literal">None</span></span><br><span class="line">                    cur = cur.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res.append(cur.val)</span><br><span class="line">                cur = cur.right</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
 <hr>
+<p>本质上，Morris 遍历利用了左子树的空余节点，对于没有左子树的节点只到达一次，对于有左子树的节点会到达两次。</p>
+<p>这是因为，前驱节点在没有左子树时，我们为其赋予了回到了初始位置的右指针，当指针再次经过时，我们可以立刻检测到这个节点已经被检查过，顺着右指针回到初始位置。<br>那么对于当前初始位置，其所有左子树已经被检查过了，不需要再检查一遍，因此更新到右子树作为新的起始位置进行检查，并将修改的左子树退回。如此往复，就可以遍历所有节点。</p>
+<p>那么如何用这个方法获得中序遍历呢？<br>困死了，明天再说</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluijmobs00012kumfnvsavz8" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluikx1li000190umbk5vedgc" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -176,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluijmobj00002kum1ehcbtxu" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluikx1l9000090umc2m33b0h" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
