@@ -93,9 +93,7 @@
       
         <h1 id="Morris-遍历"><a href="#Morris-遍历" class="headerlink" title="Morris 遍历"></a>Morris 遍历</h1><p>morris遍历是可以将非递归遍历中的空间复杂度降为O(1)。从而实现时间复杂度为O(N)，而空间复杂度为O(1)的精妙算法。</p>
 <p>力扣上对应这一道简单的经典问题</p>
-<pre><code>[144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/description/)
-给你二叉树的根节点 root ，返回它节点值的前序遍历。
-</code></pre>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/description/">144. 二叉树的前序遍历</a><br>    给你二叉树的根节点 root ，返回它节点值的前序遍历。</p>
 <p>这道题，黛雅很快给出迭代的解法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">preorderTraversal</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        nums = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> nums</span><br><span class="line">        nums.append(root.val)</span><br><span class="line">        <span class="keyword">if</span> root.left:</span><br><span class="line">            nums = nums + self.preorderTraversal(root.left)</span><br><span class="line">        <span class="keyword">if</span> root.right:</span><br><span class="line">            nums = nums + self.preorderTraversal(root.right)</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> nums</span><br></pre></td></tr></table></figure>
 <p>但是这个解法，空间复杂度为O(N)，于是决定学习Morris 遍历。</p>
@@ -127,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluidt9jn0001esume1tofxld" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluijmobs00012kumfnvsavz8" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -178,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluidt9jj0000esum9xf88if6" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluijmobj00002kum1ehcbtxu" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
