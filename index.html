@@ -69,6 +69,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-二叉树的遍历问题2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%982/" class="article-date">
+  <time class="dt-published" datetime="2024-04-03T00:51:47.000Z" itemprop="datePublished">2024-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%982/">二叉树的遍历问题2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天上午自学了二叉树的深度优先算法和广度优先算法<br>这两个概念顾名思义起来非常的简单</p>
+<hr>
+<h1 id="深度优先算法"><a href="#深度优先算法" class="headerlink" title="深度优先算法"></a>深度优先算法</h1><p>深度优先算法：可以想象一颗二叉树，我们每次路线走未走过的最左下的节点，直到最后一个节点（叶节点），按照这个<strong>路径</strong>选取原则遍历到所有的叶节点。</p>
+<p>但是这个想法和实际操作是不一样的！因为实际执行的时候，我们每次经过的节点会被标记，当第一次走到叶节点，或者走到一个左孩子和右孩子均已被标记的根节点时，会执行回退，退回到上一个根节点。这个操作实际告诉我们，后续的节点已被深度优先搜索到。</p>
+<p>这样我们实现了，不重复已经历的节点，就把所有的“<strong>路径</strong>”遍历过！</p>
+<p>时间复杂度为O（N），N 为二叉树的所有节点数，因为遍历了二叉树所有节点<br>空间复杂度为O（h），h 为二叉树的高度，因为遍历的递归函数需要栈空间，而栈空间取决于递归的深度，因此空间复杂度等价于二叉树的高度。</p>
+<hr>
+<h1 id="广度优先算法"><a href="#广度优先算法" class="headerlink" title="广度优先算法"></a>广度优先算法</h1><p>广度优先算法：可以想象一颗二叉树，我们把这一行的所有节点从左到右遍历一遍，遍历完了进入下一行执行这一过程，直到该行的所有节点均为<code>None</code></p>
+<p>一般来说比深度优先算法更好理解</p>
+<p>时间复杂度为O（l），l 为二叉树的长度，因为每次递归需要存储的节点为当前行的长度。<br>空间复杂度为O（N），N 为二叉树的所有节点数，因为遍历了二叉树所有节点。</p>
+<hr>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><pre><code>[LC104:二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)  
+给定一个二叉树 root ，返回其最大深度。
+二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。
+</code></pre>
+<p>这道题目由于一眼找深度，那么可以考虑深度优先算法，直接递归找到最深的节点的深度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxDepth</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 排除空二叉树以及判断叶节点</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 递归：</span></span><br><span class="line">        left_height = self.maxDepth(root.left)</span><br><span class="line">        right_height = self.maxDepth(root.right)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(left_height, right_height) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想要使用广度优先算法呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxDepth</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 记录行数，行数就是要找的深度</span></span><br><span class="line">        index = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 记录行节点</span></span><br><span class="line">        ls = [root]</span><br><span class="line">        <span class="keyword">while</span> ls:</span><br><span class="line">            size = <span class="built_in">len</span>(ls)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">                <span class="comment"># 逐次弹出行节点</span></span><br><span class="line">                cur = ls.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">if</span> cur.left:</span><br><span class="line">                    ls.append(cur.left)</span><br><span class="line">                <span class="keyword">if</span> cur.right:</span><br><span class="line">                    ls.append(cur.right)</span><br><span class="line">            <span class="comment"># 更新行节点</span></span><br><span class="line">            index += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> index</span><br></pre></td></tr></table></figure>
+
+<p>继续去刷题了，感觉有些理解了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%982/" data-id="cluj8o4ff0002q8um3qv50bvb" data-title="二叉树的遍历问题2" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-二叉树的遍历问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" class="article-date">
@@ -128,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluikx1li000190umbk5vedgc" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/" data-id="cluj8o4fd0001q8umb42dcuin" data-title="二叉树的遍历问题1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -179,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluikx1l9000090umc2m33b0h" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/02/hello-world/" data-id="cluj8o4f90000q8um02jm88fb" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -220,6 +280,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%982/">二叉树的遍历问题2</a>
+          </li>
         
           <li>
             <a href="/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/">二叉树的遍历问题1</a>
