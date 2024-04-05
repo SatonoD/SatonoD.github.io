@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="队列和栈今天决定把“造轮子”的题目放在最后，因为感觉对黛雅来说有些困难 队列和优先搜索岛屿问题总结(DFS)本质：在网格中讨论DFS问题 偷到大佬的理解：回想二叉树中的深度优先搜索（DFS）问题，核心在于判断basecase（边界条件：叶节点下一个指向null）和访问相邻节点（左右子树递归） 200. 岛屿数量 给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。">
+        <meta name="description" content="队列和栈今天决定把“造轮子”的题目放在最后，因为感觉对黛雅来说有些困难 队列和优先搜索岛屿问题总结(DFS)本质：在网格中讨论DFS问题 偷到大佬的理解：回想二叉树中的深度优先搜索（DFS）问题，核心在于判断basecase（边界条件：叶节点下一个指向null）和访问相邻节点（左右子树递归） LC200. 岛屿数量 给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="队列和栈">
 <meta property="og:url" content="http://example.com/2024/04/05/%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="队列和栈今天决定把“造轮子”的题目放在最后，因为感觉对黛雅来说有些困难 队列和优先搜索岛屿问题总结(DFS)本质：在网格中讨论DFS问题 偷到大佬的理解：回想二叉树中的深度优先搜索（DFS）问题，核心在于判断basecase（边界条件：叶节点下一个指向null）和访问相邻节点（左右子树递归） 200. 岛屿数量 给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。">
+<meta property="og:description" content="队列和栈今天决定把“造轮子”的题目放在最后，因为感觉对黛雅来说有些困难 队列和优先搜索岛屿问题总结(DFS)本质：在网格中讨论DFS问题 偷到大佬的理解：回想二叉树中的深度优先搜索（DFS）问题，核心在于判断basecase（边界条件：叶节点下一个指向null）和访问相邻节点（左右子树递归） LC200. 岛屿数量 给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-05T02:18:44.000Z">
-<meta property="article:modified_time" content="2024-04-05T03:05:41.775Z">
+<meta property="article:modified_time" content="2024-04-05T04:50:28.281Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-05 11:05:41</span>
-            <span class="mobile">2024-04-05 11:05:41</span>
+            <span class="desktop">2024-04-05 12:50:28</span>
+            <span class="mobile">2024-04-05 12:50:28</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -445,9 +445,12 @@
             <h1 id="队列和栈"><a href="#队列和栈" class="headerlink" title="队列和栈"></a>队列和栈</h1><p>今天决定把“造轮子”的题目放在最后，因为感觉对黛雅来说有些困难</p>
 <h2 id="队列和优先搜索"><a href="#队列和优先搜索" class="headerlink" title="队列和优先搜索"></a>队列和优先搜索</h2><h3 id="岛屿问题总结-DFS"><a href="#岛屿问题总结-DFS" class="headerlink" title="岛屿问题总结(DFS)"></a>岛屿问题总结(DFS)</h3><p>本质：在网格中讨论DFS问题</p>
 <p>偷到大佬的理解：回想二叉树中的深度优先搜索（DFS）问题，核心在于<strong>判断basecase</strong>（边界条件：叶节点下一个指向null）和<strong>访问相邻节点</strong>（左右子树递归）</p>
-<h4 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/description/" >200. 岛屿数量 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。<br>岛屿总是被水包围，并且每座岛屿只能由水平方向和&#x2F;或竖直方向上相邻的陆地连接形成。<br>此外，你可以假设该网格的四条边均被水包围。</p>
+<h4 id="LC200-岛屿数量"><a href="#LC200-岛屿数量" class="headerlink" title="LC200. 岛屿数量"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/description/" >LC200. 岛屿数量 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。<br>岛屿总是被水包围，并且每座岛屿只能由水平方向和&#x2F;或竖直方向上相邻的陆地连接形成。<br>此外，你可以假设该网格的四条边均被水包围。</p>
 <p>我们可以考虑这样一个dfs模版：</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, grid, r, c</span>):</span><br><span class="line">    grid[r][c] = <span class="number">0</span></span><br><span class="line">    nr, nc = <span class="built_in">len</span>(grid), <span class="built_in">len</span>(grid[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> [(r - <span class="number">1</span>, c), (r + <span class="number">1</span>, c), (r, c - <span class="number">1</span>), (r, c + <span class="number">1</span>)]:</span><br><span class="line">        <span class="keyword">if</span> <span class="number">0</span> &lt;= x &lt; nr <span class="keyword">and</span> <span class="number">0</span> &lt;= y &lt; nc <span class="keyword">and</span> grid[x][y] == <span class="string">&quot;1&quot;</span>:</span><br><span class="line">            self.dfs(grid, x, y)</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numIslands</span>(<span class="params">self, grid</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type grid: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        nr = <span class="built_in">len</span>(grid)</span><br><span class="line">        <span class="comment"># 排除空海域</span></span><br><span class="line">        <span class="keyword">if</span> nr == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        nc = <span class="built_in">len</span>(grid[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        num_islands = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(nr):</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(nc):</span><br><span class="line">                <span class="keyword">if</span> grid[r][c] == <span class="string">&quot;1&quot;</span>:</span><br><span class="line">                    num_islands += <span class="number">1</span></span><br><span class="line">                    self.dfs(grid, r, c)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> num_islands</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">self, grid, r, c</span>):</span><br><span class="line">        grid[r][c] = <span class="number">0</span></span><br><span class="line">        nr, nc = <span class="built_in">len</span>(grid), <span class="built_in">len</span>(grid[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> [(r - <span class="number">1</span>, c), (r + <span class="number">1</span>, c), (r, c - <span class="number">1</span>), (r, c + <span class="number">1</span>)]:</span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> &lt;= x &lt; nr <span class="keyword">and</span> <span class="number">0</span> &lt;= y &lt; nc <span class="keyword">and</span> grid[x][y] == <span class="string">&quot;1&quot;</span>:</span><br><span class="line">                self.dfs(grid, x, y)</span><br></pre></td></tr></table></figure></div>
+<p>这个方法的思路在于，每当我“登陆”到小岛的一角，记数，然后海水就开始蔓延，直到吞没这座岛屿。岛屿被吞没后，我们去搜寻下一座小岛，直到所有小岛都被水淹没！</p>
+<p>后续会继续更新更多的思路</p>
+<h3 id="旋转密码锁问题总结-BFS"><a href="#旋转密码锁问题总结-BFS" class="headerlink" title="旋转密码锁问题总结(BFS)"></a>旋转密码锁问题总结(BFS)</h3><h4 id="LC752-打开转盘锁"><a href="#LC752-打开转盘锁" class="headerlink" title="LC752. 打开转盘锁"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/open-the-lock/description/" >LC752. 打开转盘锁 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>你有一个带有四个圆形拨轮的转盘锁。每个拨轮都有10个数字： ‘0’, ‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’ 。每个拨轮可以自由旋转：例如把 ‘9’ 变为 ‘0’，’0’ 变为 ‘9’ 。每次旋转都只能旋转一个拨轮的一位数字。<br>锁的初始数字为 ‘0000’ ，一个代表四个拨轮的数字的字符串。<br>列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。<br>字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。</p>
 
         </div>
 
@@ -462,7 +465,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-05 11:05:41
+                    :</strong> 2024-04-05 12:50:28
             </li>
         
         <li>
@@ -562,7 +565,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">队列和栈</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88"><span class="nav-text">队列和栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E5%92%8C%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="nav-text">队列和优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B2%9B%E5%B1%BF%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-DFS"><span class="nav-text">岛屿问题总结(DFS)</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88"><span class="nav-text">队列和栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E5%92%8C%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="nav-text">队列和优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B2%9B%E5%B1%BF%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-DFS"><span class="nav-text">岛屿问题总结(DFS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AF%86%E7%A0%81%E9%94%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-BFS"><span class="nav-text">旋转密码锁问题总结(BFS)</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
