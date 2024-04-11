@@ -13,16 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/404.html"/>
+    <link rel="canonical" href="http://example.com/2024/04/09/动态规划训练/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Page Not Found">
-<meta property="og:url" content="http://example.com/404.html">
+        <meta name="description" content="动态规划系列问题基本原理个人训练LC 118. 杨辉三角 给定一个非负整数 numRows，生成「杨辉三角」的前 numRows 行。 这道题目非常的基础，利用递推式就可以了。或者说，其实是一个很简化的动态规划 123456789101112131415161718class Solution(object):    def generate(self, numRows):        &amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划训练">
+<meta property="og:url" content="http://example.com/2024/04/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%AD%E7%BB%83/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="动态规划系列问题基本原理个人训练LC 118. 杨辉三角 给定一个非负整数 numRows，生成「杨辉三角」的前 numRows 行。 这道题目非常的基础，利用递推式就可以了。或者说，其实是一个很简化的动态规划 123456789101112131415161718class Solution(object):    def generate(self, numRows):        &amp;quo">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-09T14:26:06.000Z">
+<meta property="article:modified_time" content="2024-04-09T15:06:15.248Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -36,7 +40,7 @@
     
     <title>
         
-            Page Not Found -
+            动态规划训练 -
         
         晦冥を照らせ永遠の耀き
     </title>
@@ -376,14 +380,197 @@
             <div class="main-content">
 
                 
-                    <div class="nf-container">
-    <div class="nf-text">
-        <h1>404 Page Not Found</h1>
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">动态规划训练</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/dia.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">SatonoD</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-09 22:26:06</span>
+        <span class="mobile">2024-04-09 22:26:06</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-09 23:06:15</span>
+            <span class="mobile">2024-04-09 23:06:15</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="动态规划系列问题"><a href="#动态规划系列问题" class="headerlink" title="动态规划系列问题"></a>动态规划系列问题</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><h2 id="个人训练"><a href="#个人训练" class="headerlink" title="个人训练"></a>个人训练</h2><h3 id="LC-118-杨辉三角"><a href="#LC-118-杨辉三角" class="headerlink" title="LC 118. 杨辉三角"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/pascals-triangle/description" >LC 118. 杨辉三角 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>给定一个非负整数 <code>numRows</code>，生成「杨辉三角」的前 <code>numRows</code> 行。</p>
+<p>这道题目非常的基础，利用递推式就可以了。或者说，其实是一个很简化的动态规划</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">generate</span>(<span class="params">self, numRows</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type numRows: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        dp = [[<span class="number">1</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(numRows)]</span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> dp</span><br><span class="line">        dp[<span class="number">1</span>].append(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> dp</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, numRows):</span><br><span class="line">            size = <span class="built_in">len</span>(dp[i-<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size-<span class="number">1</span>):</span><br><span class="line">                dp[i].append(dp[i-<span class="number">1</span>][j]+dp[i-<span class="number">1</span>][j+<span class="number">1</span>])</span><br><span class="line">            dp[i].append(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure></div>
+<hr>
+<p>接下来：我做困难题？真的假的？</p>
+<h3 id="LC-329-矩阵中的最长递增路径"><a href="#LC-329-矩阵中的最长递增路径" class="headerlink" title="LC 329. 矩阵中的最长递增路径"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/description" >LC 329. 矩阵中的最长递增路径 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>给定一个 <code>m x n</code> 整数矩阵 <code>matrix</code> ，找出其中 <strong>最长递增路径</strong> 的长度。<br>对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在<strong>对角线</strong>方向上移动或移动到边界外（即不允许环绕）。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 动态规划训练</li>
+        <li><strong>Author:</strong> SatonoD</li>
+        <li><strong>Created at
+                :</strong> 2024-04-09 22:26:06</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-09 23:06:15
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/09/动态规划训练/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/08/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">贪心算法</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
     </div>
-    <div class="nf-button">
-        <a href="/" class="button large center"><i class="fa-regular fa-house"></i> Go Back Home</a>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">动态规划训练</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98"><span class="nav-text">动态规划系列问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E8%AE%AD%E7%BB%83"><span class="nav-text">个人训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LC-118-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92"><span class="nav-text">LC 118. 杨辉三角 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC-329-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84"><span class="nav-text">LC 329. 矩阵中的最长递增路径 </span></a></li></ol></li></ol></li></ol>
+
     </div>
 </div>
+        </div>
+    
+</div>
+
+
 
                 
 
@@ -465,6 +652,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
