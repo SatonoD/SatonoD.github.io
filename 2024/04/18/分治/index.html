@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/04/02/二叉树的遍历问题/"/>
+    <link rel="canonical" href="http://example.com/2024/04/18/分治/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Morris 遍历morris遍历是可以将非递归遍历中的空间复杂度降为O(1)。从而实现时间复杂度为O(N)，而空间复杂度为O(1)的精妙算法。 力扣上对应这一道简单的经典问题 144. 二叉树的前序遍历     给你二叉树的根节点 root ，返回它节点值的前序遍历。 这道题，黛雅很快给出迭代的解法 12345678910111213141516class Solution(object):">
+        <meta name="description" content="孩子们我回来了今天做这个题目，想起来以前做过的题：LC106. 从中序与后序遍历序列构造二叉树  给定两个整数数组 inorder 和 postorder ，其中 inorder 是二叉树的中序遍历， postorder 是同一棵树的后序遍历，请你构造并返回这颗 二叉树 。 今天做的是   LCR 124. 推理二叉树  实际上，就是从前序与中序遍历序列构造二叉树。 事实上，根据二叉树的性质，我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的遍历问题1">
-<meta property="og:url" content="http://example.com/2024/04/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="分治">
+<meta property="og:url" content="http://example.com/2024/04/18/%E5%88%86%E6%B2%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Morris 遍历morris遍历是可以将非递归遍历中的空间复杂度降为O(1)。从而实现时间复杂度为O(N)，而空间复杂度为O(1)的精妙算法。 力扣上对应这一道简单的经典问题 144. 二叉树的前序遍历     给你二叉树的根节点 root ，返回它节点值的前序遍历。 这道题，黛雅很快给出迭代的解法 12345678910111213141516class Solution(object):">
+<meta property="og:description" content="孩子们我回来了今天做这个题目，想起来以前做过的题：LC106. 从中序与后序遍历序列构造二叉树  给定两个整数数组 inorder 和 postorder ，其中 inorder 是二叉树的中序遍历， postorder 是同一棵树的后序遍历，请你构造并返回这颗 二叉树 。 今天做的是   LCR 124. 推理二叉树  实际上，就是从前序与中序遍历序列构造二叉树。 事实上，根据二叉树的性质，我们">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-02T07:15:13.000Z">
-<meta property="article:modified_time" content="2024-04-02T16:13:48.852Z">
+<meta property="article:published_time" content="2024-04-18T08:39:34.000Z">
+<meta property="article:modified_time" content="2024-04-18T09:54:39.450Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            二叉树的遍历问题1 -
+            分治 -
         
         晦冥を照らせ永遠の耀き
     </title>
@@ -386,7 +386,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">二叉树的遍历问题1</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">分治</h1>
                 </div>
             
             </div>
@@ -407,15 +407,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-02 15:15:13</span>
-        <span class="mobile">2024-04-02 15:15:13</span>
+        <span class="desktop">2024-04-18 16:39:34</span>
+        <span class="mobile">2024-04-18 16:39:34</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-03 00:13:48</span>
-            <span class="mobile">2024-04-03 00:13:48</span>
+            <span class="desktop">2024-04-18 17:54:39</span>
+            <span class="mobile">2024-04-18 17:54:39</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -442,39 +442,19 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="Morris-遍历"><a href="#Morris-遍历" class="headerlink" title="Morris 遍历"></a>Morris 遍历</h1><p>morris遍历是可以将非递归遍历中的空间复杂度降为O(1)。从而实现时间复杂度为O(N)，而空间复杂度为O(1)的精妙算法。</p>
-<p>力扣上对应这一道简单的经典问题</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/description/" >144. 二叉树的前序遍历 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>    给你二叉树的根节点 root ，返回它节点值的前序遍历。</p>
-<p>这道题，黛雅很快给出迭代的解法</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">preorderTraversal</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        nums = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> nums</span><br><span class="line">        nums.append(root.val)</span><br><span class="line">        <span class="keyword">if</span> root.left:</span><br><span class="line">            nums = nums + self.preorderTraversal(root.left)</span><br><span class="line">        <span class="keyword">if</span> root.right:</span><br><span class="line">            nums = nums + self.preorderTraversal(root.right)</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> nums</span><br></pre></td></tr></table></figure></div>
-<p>但是这个解法，空间复杂度为O(N)，于是决定学习Morris 遍历。</p>
-<hr>
-<p>针对这道题，力扣官方解法说明如下：</p>
-<p>Morris 遍历的核心思想是利用树的大量空闲指针，实现空间开销的极限缩减。其前序遍历规则总结如下：</p>
-<p>1）新建临时节点，令该节点为 root；<br>2）如果当前节点的左子节点为空，将当前节点加入答案，并遍历当前节点的右子节点；<br>3）如果当前节点的左子节点不为空，在当前节点的左子树中找到当前节点在中序遍历下的前驱节点：<br>    · 如果前驱节点的右子节点为空，将前驱节点的右子节点设置为当前节点。然后将当前节点加入答案，并将前驱节点的右子节点更新为当前节点。当前节点更新为当前节点的左子节点。<br>    ·如果前驱节点的右子节点为当前节点，将它的右子节点重新设为空。当前节点更新为当前节点的右子节点。<br>4）重复步骤 2 和步骤 3，直到遍历结束。  </p>
-<pre><code>Tips：中序遍历中的某一根节点的前驱节点就是，该根节点的左子树中，最右的节点
-相应的，后继结点就是右子树中最左的节点
-</code></pre>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;前驱节点&quot;</span> = root.left.right.right.... <span class="keyword">while</span> .right = <span class="literal">None</span></span><br><span class="line"><span class="string">&quot;后继结点&quot;</span> = root.right.left.left.... <span class="keyword">while</span> .left = <span class="literal">None</span></span><br></pre></td></tr></table></figure></div>
-<pre><code>其实，自己随便将一个二叉树按照中序遍历的规则打开，前驱节点就是当前根节点前面的节点，后继节点为当前根节点后面的节点。当然，根据定义，前驱节点和后继节点可能不存在。
-</code></pre>
-<p>这样我们利用 Morris 遍历的方法，前序遍历该二叉树，即可实现线性时间与常数空间的遍历。</p>
-<hr>
-<p>实际上，Morris 遍历一般过程可以总结为：</p>
-<pre><code>1）设置当前指针cur
-2）如果cur无左子树（if not cur.left:），cur向右移动（cur=cur.right）
-3）如果cur有左子树，找到cur左子树上的前驱节点，记为pre：
-如果pre的right指针指向空，让其指向cur（per.right = cur），cur向左移动（cur=cur.left）
-如果pre的right指针指向cur，让其指向空（per.right = None），cur向右移动（cur=cur.right）
-实现以上的原则，即实现了morris遍历。
-</code></pre>
-<p>那么上面这道题就可以转化为如何利用Morris 遍历实现前序遍历</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">preorderTraversal</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = <span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="comment"># 建立当前指针</span></span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="comment"># 建立寻找前驱节点的指针</span></span><br><span class="line">            pre = cur.left</span><br><span class="line">            <span class="keyword">if</span> pre:</span><br><span class="line">                <span class="comment"># 找到的标准以及对应的可能结果</span></span><br><span class="line">                <span class="keyword">while</span> pre.right <span class="keyword">and</span> pre.right != cur:</span><br><span class="line">                    pre = pre.right</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> pre.right:</span><br><span class="line">                    res.append(cur.val)</span><br><span class="line">                    pre.right = cur</span><br><span class="line">                    cur = cur.left</span><br><span class="line"></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    pre.right = <span class="literal">None</span></span><br><span class="line">                    cur = cur.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res.append(cur.val)</span><br><span class="line">                cur = cur.right</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></div>
+            <p>孩子们我回来了<br>今天做这个题目，想起来以前做过的题：<br><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/" >LC106. 从中序与后序遍历序列构造二叉树 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>给定两个整数数组 inorder 和 postorder ，其中 inorder 是二叉树的中序遍历， postorder 是同一棵树的后序遍历，请你构造并返回这颗 二叉树 。</p>
+<p>今天做的是  </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/" >LCR 124. 推理二叉树 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>实际上，就是从前序与中序遍历序列构造二叉树。</p>
+<p>事实上，根据二叉树的性质，我们可以很自然的发现，这些序列对于每个根节点，可以被划分为左子树和右子树两个区。从而，可以应用分治的思想！！！</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deduceTree</span>(<span class="params">self, preorder, inorder</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type preorder: List[int]</span></span><br><span class="line"><span class="string">        :type inorder: List[int]</span></span><br><span class="line"><span class="string">        :rtype: Optional[TreeNode]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        dic = &#123;val:idx <span class="keyword">for</span> idx, val <span class="keyword">in</span> <span class="built_in">enumerate</span>(inorder)&#125;</span><br><span class="line">        <span class="comment"># 分治，划分左子树和右子树！</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">in_left, in_right</span>):</span><br><span class="line">            <span class="comment"># 终止条件</span></span><br><span class="line">            <span class="keyword">if</span> in_left &gt; in_right:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="comment"># 寻找中序遍历根节点位置，作为分区节点</span></span><br><span class="line">            val = preorder[in_left]</span><br><span class="line">            idx = dic[val]</span><br><span class="line">            <span class="comment"># 建立根节点</span></span><br><span class="line">            root = TreeNode(val)</span><br><span class="line"></span><br><span class="line">            root.left = helper(in_left, idx - <span class="number">1</span>)</span><br><span class="line">            root.right = helper(idx + <span class="number">1</span>, in_right)</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> helper(<span class="number">0</span>, <span class="built_in">len</span>(inorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
 
-<hr>
-<p>本质上，Morris 遍历利用了左子树的空余节点，对于没有左子树的节点只到达一次，对于有左子树的节点会到达两次。</p>
-<p>这是因为，前驱节点在没有左子树时，我们为其赋予了回到了初始位置的右指针，当指针再次经过时，我们可以立刻检测到这个节点已经被检查过，顺着右指针回到初始位置。<br>那么对于当前初始位置，其所有左子树已经被检查过了，不需要再检查一遍，因此更新到右子树作为新的起始位置进行检查，并将修改的左子树退回。如此往复，就可以遍历所有节点。</p>
-<p>那么如何用这个方法获得中序遍历呢？<br>困死了，明天再说</p>
+<p>但是超出了内存限制（悲</p>
+<h2 id="LCR-152-验证二叉搜索树的后序遍历序列"><a href="#LCR-152-验证二叉搜索树的后序遍历序列" class="headerlink" title="LCR 152. 验证二叉搜索树的后序遍历序列"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/description/" >LCR 152. 验证二叉搜索树的后序遍历序列 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>请实现一个函数来判断整数数组 <code>postorder</code> 是否为二叉搜索树的后序遍历结果。</p>
+<p>相同的思路，只要了解二叉树就很简单</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">verifyTreeOrder</span>(<span class="params">self, postorder</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type postorder: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">left, right</span>):</span><br><span class="line">            <span class="keyword">if</span> left &gt;= right:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            val = postorder[right]</span><br><span class="line">            idx = left</span><br><span class="line">            <span class="keyword">while</span> postorder[idx] &lt; postorder[right]:</span><br><span class="line">                idx += <span class="number">1</span></span><br><span class="line">            cur = idx</span><br><span class="line">            <span class="keyword">while</span> postorder[cur] &gt; postorder[right]:</span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> cur == right <span class="keyword">and</span> helper(left, idx - <span class="number">1</span>) <span class="keyword">and</span> helper(idx, right - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> helper(<span class="number">0</span>, <span class="built_in">len</span>(postorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
+
 
         </div>
 
@@ -482,18 +462,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 二叉树的遍历问题1</li>
+        <li><strong>Title:</strong> 分治</li>
         <li><strong>Author:</strong> SatonoD</li>
         <li><strong>Created at
-                :</strong> 2024-04-02 15:15:13</li>
+                :</strong> 2024-04-18 16:39:34</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-03 00:13:48
+                    :</strong> 2024-04-18 17:54:39
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/02/二叉树的遍历问题/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/18/分治/
         </li>
         <li>
             <strong>
@@ -518,29 +498,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%982/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">二叉树的遍历问题2</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/02/hello-world/"
+                        href="/2024/04/11/%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Hello New Reader</span>
+                                <span class="post-nav-title-item">排序和搜索</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -603,8 +568,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">二叉树的遍历问题1</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Morris-%E9%81%8D%E5%8E%86"><span class="nav-text">Morris 遍历</span></a></li></ol>
+        <div class="page-title">分治</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-152-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-text">LCR 152. 验证二叉搜索树的后序遍历序列 </span></a></li></ol>
 
     </div>
 </div>
