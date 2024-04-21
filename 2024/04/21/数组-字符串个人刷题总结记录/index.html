@@ -13,20 +13,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/04/20/滑动窗口/"/>
+    <link rel="canonical" href="http://example.com/2024/04/21/数组-字符串个人刷题总结记录/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="之前一直忽略了滑动窗口的问题，现在准备补上。 209. 长度最小的子数组 给定一个含有 n 个正整数的数组和一个正整数 target 。找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。 12345678910111213141516171819">
-<meta property="og:type" content="article">
-<meta property="og:title" content="滑动窗口">
-<meta property="og:url" content="http://example.com/2024/04/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.html">
+        <meta property="og:type" content="article">
+<meta property="og:title" content="数组&#x2F;字符串个人刷题总结记录">
+<meta property="og:url" content="http://example.com/2024/04/21/%E6%95%B0%E7%BB%84-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E4%BA%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="之前一直忽略了滑动窗口的问题，现在准备补上。 209. 长度最小的子数组 给定一个含有 n 个正整数的数组和一个正整数 target 。找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。 12345678910111213141516171819">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-20T06:17:34.000Z">
-<meta property="article:modified_time" content="2024-04-20T08:21:09.334Z">
+<meta property="article:published_time" content="2024-04-21T07:57:50.000Z">
+<meta property="article:modified_time" content="2024-04-21T07:57:50.916Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +38,7 @@
     
     <title>
         
-            滑动窗口 -
+            数组/字符串个人刷题总结记录 -
         
         晦冥を照らせ永遠の耀き
     </title>
@@ -386,7 +384,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">滑动窗口</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">数组/字符串个人刷题总结记录</h1>
                 </div>
             
             </div>
@@ -407,15 +405,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-20 14:17:34</span>
-        <span class="mobile">2024-04-20 14:17:34</span>
+        <span class="desktop">2024-04-21 15:57:50</span>
+        <span class="mobile">2024-04-21 15:57:50</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-20 16:21:09</span>
-            <span class="mobile">2024-04-20 16:21:09</span>
+            <span class="desktop">2024-04-21 15:57:50</span>
+            <span class="mobile">2024-04-21 15:57:50</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -442,35 +440,25 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>之前一直忽略了滑动窗口的问题，现在准备补上。</p>
-<h2 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150" >209. 长度最小的子数组 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。<br>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 连续<br>子数组<br> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度。如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minSubArrayLen</span>(<span class="params">self, target, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 建立滑动窗口</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        ans = n + <span class="number">1</span></span><br><span class="line">        start, end = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> end &lt; n:</span><br><span class="line">            <span class="comment"># 终点先向右滑动</span></span><br><span class="line">            total += nums[end]</span><br><span class="line">            <span class="comment"># 起点再向右滑动</span></span><br><span class="line">            <span class="keyword">while</span> total &gt;= target:</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, end - start + <span class="number">1</span>)</span><br><span class="line">                total -= nums[start]</span><br><span class="line">                start += <span class="number">1</span></span><br><span class="line">            end += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> ans == n + <span class="number">1</span> <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure></div>
-
-
-<h2 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-interview-150" >3. 无重复字符的最长子串 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的最长子串的长度。</p>
-<p>滑动窗口，我已大成（bsuhi<br>结合了哈希表队列实现，只要遇到见过的数据就开始从头弹出已有的数据。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 滑动窗口</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        end = <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        size = <span class="built_in">len</span>(s)</span><br><span class="line">        ls = []</span><br><span class="line">        <span class="keyword">while</span> end &lt; size:</span><br><span class="line">            <span class="keyword">while</span> s[end] <span class="keyword">in</span> ls:</span><br><span class="line">                ls.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            ls.append(s[end])</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">len</span>(ls))</span><br><span class="line">            end += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="30-串联所有单词的子串"><a href="#30-串联所有单词的子串" class="headerlink" title="30. 串联所有单词的子串"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/substring-with-concatenation-of-all-words/?envType=study-plan-v2&envId=top-interview-150" >30. 串联所有单词的子串 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个字符串 <code>s</code> 和一个字符串数组 <code>words</code>。 <code>words</code> 中所有字符串 长度相同。<br> <code>s</code> 中的 串联子串 是指一个包含  <code>words</code> 中所有字符串以任意顺序排列连接起来的子串。<br>例如，如果 <code>words = [&quot;ab&quot;,&quot;cd&quot;,&quot;ef&quot;]</code>， 那么 <code>&quot;abcdef&quot;</code>， <code>&quot;abefcd&quot;</code>，<code>&quot;cdabef&quot;</code>， <code>&quot;cdefab&quot;</code>，<code>&quot;efabcd&quot;</code>， 和 <code>&quot;efcdab&quot;</code> 都是串联子串。 <code>&quot;acdbef&quot;</code> 不是串联子串，因为他不是任何 <code>words</code> 排列的连接。<br>返回所有串联子串在 <code>s</code> 中的开始索引。你可以以 任意顺序 返回答案。</p>
-
+            
         </div>
 
         
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 滑动窗口</li>
+        <li><strong>Title:</strong> 数组/字符串个人刷题总结记录</li>
         <li><strong>Author:</strong> SatonoD</li>
         <li><strong>Created at
-                :</strong> 2024-04-20 14:17:34</li>
+                :</strong> 2024-04-21 15:57:50</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-20 16:21:09
+                    :</strong> 2024-04-21 15:57:50
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/20/滑动窗口/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/21/数组-字符串个人刷题总结记录/
         </li>
         <li>
             <strong>
@@ -495,29 +483,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/04/21/%E6%95%B0%E7%BB%84-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E4%BA%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">数组/字符串个人刷题总结记录</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/18/%E5%88%86%E6%B2%BB/"
+                        href="/2024/04/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">分治</span>
+                                <span class="post-nav-title-item">滑动窗口</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -580,8 +553,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">滑动窗口</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84"><span class="nav-text">209. 长度最小的子数组 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2"><span class="nav-text">3. 无重复字符的最长子串 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2"><span class="nav-text">30. 串联所有单词的子串 </span></a></li></ol>
+        <div class="page-title">数组/字符串个人刷题总结记录</div>
+        
 
     </div>
 </div>
