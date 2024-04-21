@@ -26,7 +26,7 @@
 <meta property="og:description" content="孩子们我回来了今天做这个题目，想起来以前做过的题：LC106. 从中序与后序遍历序列构造二叉树  给定两个整数数组 inorder 和 postorder ，其中 inorder 是二叉树的中序遍历， postorder 是同一棵树的后序遍历，请你构造并返回这颗 二叉树 。 今天做的是   LCR 124. 推理二叉树  实际上，就是从前序与中序遍历序列构造二叉树。 事实上，根据二叉树的性质，我们">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-18T08:39:34.000Z">
-<meta property="article:modified_time" content="2024-04-18T09:54:39.450Z">
+<meta property="article:modified_time" content="2024-04-18T14:10:28.902Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -360,7 +360,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-18 17:54:39</span>
-            <span class="mobile">2024-04-18 17:54:39</span>
+            <span class="desktop">2024-04-18 22:10:28</span>
+            <span class="mobile">2024-04-18 22:10:28</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -455,6 +455,12 @@
 <p>相同的思路，只要了解二叉树就很简单</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">verifyTreeOrder</span>(<span class="params">self, postorder</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type postorder: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">left, right</span>):</span><br><span class="line">            <span class="keyword">if</span> left &gt;= right:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            val = postorder[right]</span><br><span class="line">            idx = left</span><br><span class="line">            <span class="keyword">while</span> postorder[idx] &lt; postorder[right]:</span><br><span class="line">                idx += <span class="number">1</span></span><br><span class="line">            cur = idx</span><br><span class="line">            <span class="keyword">while</span> postorder[cur] &gt; postorder[right]:</span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> cur == right <span class="keyword">and</span> helper(left, idx - <span class="number">1</span>) <span class="keyword">and</span> helper(idx, right - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> helper(<span class="number">0</span>, <span class="built_in">len</span>(postorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="LCR-170-交易逆序对的总数"><a href="#LCR-170-交易逆序对的总数" class="headerlink" title="LCR 170. 交易逆序对的总数"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/description/" >LCR 170. 交易逆序对的总数 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。</p>
+<p>不愧是hard题目，解答也看了一段时间</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reversePairs</span>(<span class="params">self, record</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type record: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 分治分治！！！</span></span><br><span class="line">        <span class="comment"># 归并排序</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">merge_sort</span>(<span class="params">l, r</span>):</span><br><span class="line">            <span class="comment"># 终止条件</span></span><br><span class="line">            <span class="keyword">if</span> l &gt;= r:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="comment"># 递归划分</span></span><br><span class="line">            m = (l + r) // <span class="number">2</span></span><br><span class="line">            res = merge_sort(l, m) + merge_sort(m + <span class="number">1</span>, r)</span><br><span class="line">            <span class="comment"># 合并阶段  双指针排序</span></span><br><span class="line">            i, j = l, m + <span class="number">1</span></span><br><span class="line">            tmp[l:r + <span class="number">1</span>] = record[l:r + <span class="number">1</span>]</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(l, r + <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> i == m + <span class="number">1</span>:</span><br><span class="line">                    record[k] = tmp[j]</span><br><span class="line">                    j += <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> j == r + <span class="number">1</span> <span class="keyword">or</span> tmp[i] &lt;= tmp[j]:</span><br><span class="line">                    record[k] = tmp[i]</span><br><span class="line">                    i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    record[k] = tmp[j]</span><br><span class="line">                    j += <span class="number">1</span></span><br><span class="line">                    res += m - i + <span class="number">1</span> <span class="comment"># 统计逆序对</span></span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        </span><br><span class="line">        tmp = [<span class="number">0</span>] * <span class="built_in">len</span>(record)</span><br><span class="line">        <span class="keyword">return</span> merge_sort(<span class="number">0</span>, <span class="built_in">len</span>(record) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>不过，明天复习一下。</p>
+<h2 id="LCR-159-库存管理-III"><a href="#LCR-159-库存管理-III" class="headerlink" title="LCR 159. 库存管理 III"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/" >LCR 159. 库存管理 III <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>仓库管理员以数组 stock 形式记录商品库存表，其中 stock[i] 表示对应商品库存余量。请返回库存余量最少的 cnt 个商品余量，返回 顺序不限。</p>
 
         </div>
 
@@ -469,7 +475,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-18 17:54:39
+                    :</strong> 2024-04-18 22:10:28
             </li>
         
         <li>
@@ -497,6 +503,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/04/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">滑动窗口</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -569,7 +590,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">分治</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-152-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-text">LCR 152. 验证二叉搜索树的后序遍历序列 </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-152-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-text">LCR 152. 验证二叉搜索树的后序遍历序列 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-170-%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0"><span class="nav-text">LCR 170. 交易逆序对的总数 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-159-%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86-III"><span class="nav-text">LCR 159. 库存管理 III </span></a></li></ol>
 
     </div>
 </div>
@@ -602,7 +623,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        11 posts in total
+                        12 posts in total
                     </span>
                     
                 </p>
