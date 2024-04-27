@@ -26,7 +26,7 @@
 <meta property="og:description" content="今天上午自学了二叉树的深度优先算法和广度优先算法这两个概念顾名思义起来非常的简单  深度优先算法深度优先算法：可以想象一颗二叉树，我们每次路线走未走过的最左下的节点，直到最后一个节点（叶节点），按照这个路径选取原则遍历到所有的叶节点。 但是这个想法和实际操作是不一样的！因为实际执行的时候，我们每次经过的节点会被标记，当第一次走到叶节点，或者走到一个左孩子和右孩子均已被标记的根节点时，会执行回退，退">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-03T00:51:47.000Z">
-<meta property="article:modified_time" content="2024-04-03T03:18:41.030Z">
+<meta property="article:modified_time" content="2024-04-25T02:52:29.806Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -360,7 +360,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-03 11:18:41</span>
-            <span class="mobile">2024-04-03 11:18:41</span>
+            <span class="desktop">2024-04-25 10:52:29</span>
+            <span class="mobile">2024-04-25 10:52:29</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -453,10 +453,7 @@
 <p>一般来说比深度优先算法更好理解</p>
 <p>时间复杂度为O（l），l 为二叉树的长度，因为每次递归需要存储的节点为当前行的长度。<br>空间复杂度为O（N），N 为二叉树的所有节点数，因为遍历了二叉树所有节点。</p>
 <hr>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><pre><code>[LC104:二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)  
-给定一个二叉树 root ，返回其最大深度。
-二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。
-</code></pre>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/" >LC104:二叉树的最大深度 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>    给定一个二叉树 root ，返回其最大深度。<br>    二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。</p>
 <p>这道题目由于一眼找深度，那么可以考虑深度优先算法，直接递归找到最深的节点的深度。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxDepth</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 排除空二叉树以及判断叶节点</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 递归：</span></span><br><span class="line">        left_height = self.maxDepth(root.left)</span><br><span class="line">        right_height = self.maxDepth(root.right)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(left_height, right_height) + <span class="number">1</span></span><br></pre></td></tr></table></figure></div>
 
@@ -478,7 +475,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-03 11:18:41
+                    :</strong> 2024-04-25 10:52:29
             </li>
         
         <li>
@@ -626,7 +623,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        13 posts in total
+                        14 posts in total
                     </span>
                     
                 </p>
