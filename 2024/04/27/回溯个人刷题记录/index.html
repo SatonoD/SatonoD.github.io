@@ -26,7 +26,7 @@
 <meta property="og:description" content="中等 17. 电话号码的字母组合 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。 第一次写回溯，不是很会写，参考了一下答案 123456789101112131415161718192021222324252627282930313233class Solution(object)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-27T13:41:44.000Z">
-<meta property="article:modified_time" content="2024-04-29T06:23:17.800Z">
+<meta property="article:modified_time" content="2024-05-04T07:54:53.889Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -360,7 +360,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">17</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-29 14:23:17</span>
-            <span class="mobile">2024-04-29 14:23:17</span>
+            <span class="desktop">2024-05-04 15:54:53</span>
+            <span class="mobile">2024-05-04 15:54:53</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -454,7 +454,13 @@
 
 <h1 id="中等-77-组合"><a href="#中等-77-组合" class="headerlink" title="中等 77. 组合"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/description/?envType=study-plan-v2&envId=top-interview-150" >中等 77. 组合 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><p>给定两个整数 <code>n</code> 和 <code>k</code>，返回范围 <code>[1, n]</code> 中所有可能的 <code>k</code> 个数的组合。<br>你可以按 任何顺序 返回答案。</p>
 <h1 id="中等-46-全排列"><a href="#中等-46-全排列" class="headerlink" title="中等 46. 全排列"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-interview-150" >中等 46. 全排列 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><p>给定一个不含重复数字的数组 <code>nums</code> ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">permute</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = []</span><br><span class="line">        path = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">limit</span>):</span><br><span class="line">            <span class="keyword">if</span> limit == <span class="built_in">len</span>(nums):</span><br><span class="line">                res.append(copy.deepcopy(path))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                curs = <span class="built_in">list</span>(<span class="built_in">set</span>(nums) - <span class="built_in">set</span>(path))</span><br><span class="line">                <span class="keyword">for</span> cur <span class="keyword">in</span> curs:</span><br><span class="line">                    path.append(cur)</span><br><span class="line">                    backtrack(<span class="built_in">len</span>(path))</span><br><span class="line">                    path.pop()</span><br><span class="line">        backtrack(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></div>
 
+<h1 id="中等-39-组合总和"><a href="#中等-39-组合总和" class="headerlink" title="中等 39. 组合总和"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum/description/?envType=study-plan-v2&envId=top-interview-150" >中等 39. 组合总和 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><p>给你一个 无重复元素 的整数数组 <code>candidates</code> 和一个目标整数 <code>target</code> ，找出 <code>candidates</code> 中可以使数字和为目标数 <code>target</code> 的 所有 不同组合 ，并以列表形式返回。你可以按 任意顺序 返回这些组合。<br><code>candidates</code> 中的 同一个 数字可以 无限制重复被选取 。如果至少一个数字的被选数量不同，则两种组合是不同的。<br>对于给定的输入，保证和为 <code>target</code> 的不同组合数少于 <code>150</code> 个</p>
+<p>黛雅本来写的代码总是出问题！！！问题在于：</p>
+<p><em><strong>res.append(cur) ：由于 res 列表中存储的是 cur 列表的引用，因此在回溯过程中，对 cur 列表的修改会影响到 res 列表中已经添加的元素。所以，最终 res 列表中存储的都是空列表 []，而不是期望的组合结果。</strong></em></p>
+<p>可以用深拷贝解决python中回溯的问题</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">combinationSum</span>(<span class="params">self, candidates, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type candidates: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">backtrack</span>(<span class="params">index</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">sum</span>(cur) == target:</span><br><span class="line">                res.append(copy.deepcopy(cur))</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">sum</span>(cur) &lt; target:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(index, size):</span><br><span class="line">                    cur.append(candidates[i])</span><br><span class="line">                    backtrack(i)</span><br><span class="line">                    cur.pop()</span><br><span class="line">        res = []</span><br><span class="line">        cur = []</span><br><span class="line">        size = <span class="built_in">len</span>(candidates)</span><br><span class="line">        backtrack(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></div>
         </div>
 
         
@@ -468,7 +474,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-29 14:23:17
+                    :</strong> 2024-05-04 15:54:53
             </li>
         
         <li>
@@ -496,6 +502,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/04/29/vtk%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">vtk有限元分析可视化基本函数应用（python）</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -568,7 +589,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">回溯个人刷题记录</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88"><span class="nav-text">中等 17. 电话号码的字母组合 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2"><span class="nav-text">中等 79. 单词搜索 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-77-%E7%BB%84%E5%90%88"><span class="nav-text">中等 77. 组合 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-46-%E5%85%A8%E6%8E%92%E5%88%97"><span class="nav-text">中等 46. 全排列 </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88"><span class="nav-text">中等 17. 电话号码的字母组合 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2"><span class="nav-text">中等 79. 单词搜索 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-77-%E7%BB%84%E5%90%88"><span class="nav-text">中等 77. 组合 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-46-%E5%85%A8%E6%8E%92%E5%88%97"><span class="nav-text">中等 46. 全排列 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E7%AD%89-39-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C"><span class="nav-text">中等 39. 组合总和 </span></a></li></ol>
 
     </div>
 </div>
@@ -601,7 +622,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        16 posts in total
+                        17 posts in total
                     </span>
                     
                 </p>

@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/04/20/滑动窗口/"/>
+    <link rel="canonical" href="http://example.com/2024/04/29/vtk可视化基本函数应用/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="之前一直忽略了滑动窗口的问题，现在准备补上。 209. 长度最小的子数组 给定一个含有 n 个正整数的数组和一个正整数 target 。找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。 12345678910111213141516171819">
+        <meta name="description" content="基本原理这里我们主要记录有限元数据后处理相关的基本原理，虽然也有一些教程，但是这些教程分析起来还是相当有门槛的。本blog知识大多来自于vtk官方文档的教程  vtk面向对象设计优秀的软件设计软件设计的要求：    强大的系统 —— 可以处理特殊情况并保持一致地运行。（鲁棒性）    可理解的系统 —— 可以由开发者以外的其他人使用。    可扩展系统接受新任务 —— 在中断现有软件的情况下接受新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="滑动窗口">
-<meta property="og:url" content="http://example.com/2024/04/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.html">
+<meta property="og:title" content="vtk有限元分析可视化基本函数应用（python）">
+<meta property="og:url" content="http://example.com/2024/04/29/vtk%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="之前一直忽略了滑动窗口的问题，现在准备补上。 209. 长度最小的子数组 给定一个含有 n 个正整数的数组和一个正整数 target 。找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。 12345678910111213141516171819">
+<meta property="og:description" content="基本原理这里我们主要记录有限元数据后处理相关的基本原理，虽然也有一些教程，但是这些教程分析起来还是相当有门槛的。本blog知识大多来自于vtk官方文档的教程  vtk面向对象设计优秀的软件设计软件设计的要求：    强大的系统 —— 可以处理特殊情况并保持一致地运行。（鲁棒性）    可理解的系统 —— 可以由开发者以外的其他人使用。    可扩展系统接受新任务 —— 在中断现有软件的情况下接受新">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-20T06:17:34.000Z">
-<meta property="article:modified_time" content="2024-04-20T08:21:09.334Z">
+<meta property="article:published_time" content="2024-04-29T07:42:53.000Z">
+<meta property="article:modified_time" content="2024-04-30T07:20:59.026Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            滑动窗口 -
+            vtk有限元分析可视化基本函数应用（python） -
         
         晦冥を照らせ永遠の耀き
     </title>
@@ -386,7 +386,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">滑动窗口</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">vtk有限元分析可视化基本函数应用（python）</h1>
                 </div>
             
             </div>
@@ -407,15 +407,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-20 14:17:34</span>
-        <span class="mobile">2024-04-20 14:17:34</span>
+        <span class="desktop">2024-04-29 15:42:53</span>
+        <span class="mobile">2024-04-29 15:42:53</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-20 16:21:09</span>
-            <span class="mobile">2024-04-20 16:21:09</span>
+            <span class="desktop">2024-04-30 15:20:59</span>
+            <span class="mobile">2024-04-30 15:20:59</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -442,16 +442,39 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>之前一直忽略了滑动窗口的问题，现在准备补上。</p>
-<h2 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150" >209. 长度最小的子数组 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。<br>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 连续<br>子数组<br> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度。如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minSubArrayLen</span>(<span class="params">self, target, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="comment"># 建立滑动窗口</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        ans = n + <span class="number">1</span></span><br><span class="line">        start, end = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> end &lt; n:</span><br><span class="line">            <span class="comment"># 终点先向右滑动</span></span><br><span class="line">            total += nums[end]</span><br><span class="line">            <span class="comment"># 起点再向右滑动</span></span><br><span class="line">            <span class="keyword">while</span> total &gt;= target:</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, end - start + <span class="number">1</span>)</span><br><span class="line">                total -= nums[start]</span><br><span class="line">                start += <span class="number">1</span></span><br><span class="line">            end += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> ans == n + <span class="number">1</span> <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure></div>
+            <h1 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h1><p>这里我们主要记录有限元数据后处理相关的基本原理，虽然也有一些教程，但是这些教程分析起来还是相当有门槛的。<br>本blog知识大多来自于vtk官方文档的<a class="link"   target="_blank" rel="noopener" href="https://book.vtk.org/en/latest/VTKBook/01Chapter1.html" >教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="vtk面向对象设计"><a href="#vtk面向对象设计" class="headerlink" title="vtk面向对象设计"></a>vtk面向对象设计</h2><h3 id="优秀的软件设计"><a href="#优秀的软件设计" class="headerlink" title="优秀的软件设计"></a>优秀的软件设计</h3><p>软件设计的要求：<br>    强大的系统 —— 可以处理特殊情况并保持一致地运行。（鲁棒性）<br>    可理解的系统 —— 可以由开发者以外的其他人使用。<br>    可扩展系统接受新任务 —— 在中断现有软件的情况下接受新形式的数据和新算法，并且新的算法不应导致系统大部分内容被修改。<br>    模块化软件系统 —— 减少了系统组件之间的关系数量。<br>    可以被维护<br>    经济性 —— 尽可能利用过去的工作</p>
+<h3 id="面向对象的编程"><a href="#面向对象的编程" class="headerlink" title="面向对象的编程"></a>面向对象的编程</h3><p>**对象： **封装在系统内实体的属性和行为的抽象。<br>面向对象的系统不仅可以创建传统数据，又可以创建对数据的操作（python中我们称之为方法）<br>数据和操作共同构成了对象的属性。  </p>
+<p>**继承： **新类可以继承现有类的部分属性，并创建自己新的属性，以便快速添加。  </p>
+<h2 id="计算机图形学基础"><a href="#计算机图形学基础" class="headerlink" title="计算机图形学基础"></a>计算机图形学基础</h2><h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p><strong>渲染</strong>就是计算机生成图像的过程。<br>渲染过程可以分为两类： <strong>图像顺序和对象顺序</strong><br>图像顺序就是根据画布位置进行渲染，而对象顺序则是根据对象先后顺序进行渲染。  </p>
+<h3 id="图形模型-——-可视化工具包"><a href="#图形模型-——-可视化工具包" class="headerlink" title="图形模型 —— 可视化工具包"></a>图形模型 —— 可视化工具包</h3><pre><code>1.vtkRenderWindow — 管理显示设备上的窗口;一个或多个渲染器绘制到 vtkRenderWindow 的实例中。  
 
+2.vtkRenderer — 协调涉及灯光、摄像机和演员的渲染过程。
 
-<h2 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-interview-150" >3. 无重复字符的最长子串 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的最长子串的长度。</p>
-<p>滑动窗口，我已大成（bsuhi<br>结合了哈希表队列实现，只要遇到见过的数据就开始从头弹出已有的数据。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 滑动窗口</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        end = <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        size = <span class="built_in">len</span>(s)</span><br><span class="line">        ls = []</span><br><span class="line">        <span class="keyword">while</span> end &lt; size:</span><br><span class="line">            <span class="keyword">while</span> s[end] <span class="keyword">in</span> ls:</span><br><span class="line">                ls.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            ls.append(s[end])</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">len</span>(ls))</span><br><span class="line">            end += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></div>
+3.vtkLight — 照亮场景的光源。
 
-<h2 id="30-串联所有单词的子串"><a href="#30-串联所有单词的子串" class="headerlink" title="30. 串联所有单词的子串"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/substring-with-concatenation-of-all-words/?envType=study-plan-v2&envId=top-interview-150" >30. 串联所有单词的子串 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给定一个字符串 <code>s</code> 和一个字符串数组 <code>words</code>。 <code>words</code> 中所有字符串 长度相同。<br> <code>s</code> 中的 串联子串 是指一个包含  <code>words</code> 中所有字符串以任意顺序排列连接起来的子串。<br>例如，如果 <code>words = [&quot;ab&quot;,&quot;cd&quot;,&quot;ef&quot;]</code>， 那么 <code>&quot;abcdef&quot;</code>， <code>&quot;abefcd&quot;</code>，<code>&quot;cdabef&quot;</code>， <code>&quot;cdefab&quot;</code>，<code>&quot;efabcd&quot;</code>， 和 <code>&quot;efcdab&quot;</code> 都是串联子串。 <code>&quot;acdbef&quot;</code> 不是串联子串，因为他不是任何 <code>words</code> 排列的连接。<br>返回所有串联子串在 <code>s</code> 中的开始索引。你可以以 任意顺序 返回答案。</p>
+4.vtkCamera — 定义场景的视图位置、焦点和其他查看属性。
+
+5.vtkActor — 表示在场景中渲染的对象，包括其属性和在世界坐标系中的位置。（注意：vtkActor 是 vtkProp 的子类，vtkProp 是一种更通用的 actor 形式，包括注释和 2D 绘图类。有关更多信息，请参见“程序集和其他类型的 vtkProp”。
+
+6.vtkProperty — 定义 Actor 的外观属性，包括颜色、透明度和照明属性，如镜面反射和漫反射。还有线框和实体表面等代表性属性。
+
+7.vtkMapper — Actor 的几何表示。多个参与者可以引用同一个映射器。
+</code></pre>
+<h4 id="vtkRenderWindow"><a href="#vtkRenderWindow" class="headerlink" title="vtkRenderWindow"></a>vtkRenderWindow</h4><p>类 vtkRenderWindow 将渲染过程联系在一起。它负责管理显示设备上的窗口。对于运行Windows的PC，这将是一个Microsoft显示窗口，对于Linux和UNIX系统，这将是一个X窗口，在Mac（OSX）上，这将是一个Quartz窗口。在 VTK 中，vtkRenderWindow 的实例与设备无关。这意味着您无需担心正在使用的底层图形硬件或软件，该软件会在创建 vtkRenderWindow 实例时自动适应您的计算机。</p>
+<p>除了窗口管理之外，vtkRenderWindow 对象还用于管理渲染器并存储显示窗口的图形特定特征，例如大小、位置、窗口标题、窗口深度和双缓冲标志。窗口的深度指示每个像素分配的位数。双重缓冲是一种将窗口逻辑地划分为两个缓冲区的技术。在任何给定时间，用户当前都可以看到一个缓冲区。同时，第二个缓冲区可用于绘制动画中的下一个图像。渲染完成后，可以交换两个缓冲区，以便新图像可见。这种通用技术允许在用户看不到基元的实际渲染的情况下显示动画。高端图形系统在硬件中执行双重缓冲。典型的系统将具有深度为 72 位的渲染窗口。前 24 位用于存储前缓冲区的红色、绿色和蓝色 （RGB） 像素分量。接下来的 24 位存储后缓冲区的 RGB 值。最后 24 位用作 z 缓冲区。</p>
+<h4 id="vtkRenderer"><a href="#vtkRenderer" class="headerlink" title="vtkRenderer"></a>vtkRenderer</h4><p>vtkRenderer 类负责协调其灯光、摄像机和演员以生成图像。每个实例都维护特定场景中的演员、灯光和活动摄像机的列表。必须至少定义一个 Actor，但如果未定义灯光和摄像机，则渲染器将自动创建它们。在这种情况下，演员在图像中居中，默认摄像机视图位于 z 轴下方。vtkRenderer 类的实例还提供了指定背景和环境照明颜色的方法。此外，还可用于在世界坐标系、视图坐标系和显示坐标系之间进行转换。</p>
+<p>渲染器的一个重要方面是，它必须与要绘制到的 vtkRenderWindow 类的实例相关联，并且渲染窗口中绘制到的区域必须由矩形视口定义。视口由 x 和 y 图像坐标轴中的归一化坐标 （0,1） 定义。默认情况下，渲染器绘制到渲染窗口的全图范围（视点坐标 （0,0,1,1））。可以指定较小的视口。并让多个渲染器绘制到同一个渲染窗口中。</p>
+<p>什么事actor？演员？我们数据何尝不是演员？？？</p>
+<h4 id="vtk-vtkActor"><a href="#vtk-vtkActor" class="headerlink" title="vtk.vtkActor"></a>vtk.vtkActor</h4><p>类 vtkActor 的实例表示场景中的对象（演员）。特别是，vtkActor 在世界坐标系中结合了对象属性（颜色、着色类型等）、几何定义和方向。这是通过维护引用 vtkProperty、vtkMapper 和 vtkTransform 实例的实例变量在后台实现的。通常，您不需要显式创建属性或转换，因为这些是使用 vtkActor 的方法自动创建和操作的。您确实需要创建 vtkMapper（或其子类之一）的实例。映射器将数据可视化管道绑定到图形设备。（管道在下一节，很重要！！！）。</p>
+<p>在 VTK 中，actor 实际上是 vtkProp（任意道具）和 vtkProp3D（可以在 3D 空间中转换的子类。（“道具”一词来源于舞台，其中道具是场景中的物体。还有其他具有特殊行为的道具和参与者的子类（有关更多信息，请参见“程序集和其他类型的 vtkProp”）。一个例子是 vtkFollower。此类的实例始终面向活动摄像机。这在设计必须从场景中的任何摄像机位置可读的标志或文本时非常有用。</p>
+<h2 id="可视化管道"><a href="#可视化管道" class="headerlink" title="可视化管道"></a>可视化管道</h2><h2 id="有限元分析应用"><a href="#有限元分析应用" class="headerlink" title="有限元分析应用"></a>有限元分析应用</h2><p>有限元分析是一种广泛使用的数值技术，用于求偏微分方程的解。有限元分析的应用包括线性和非线性结构分析、热分析、动态分析、电磁分析和流动分析。</p>
+<h1 id="基本函数"><a href="#基本函数" class="headerlink" title="基本函数"></a>基本函数</h1><h2 id="vtk-vtkUnstructuredGrid"><a href="#vtk-vtkUnstructuredGrid" class="headerlink" title="vtk.vtkUnstructuredGrid()"></a>vtk.vtkUnstructuredGrid()</h2><p>在 VTK 中，任意数据集类型都可以用非结构化网格表达，但是这种数据集类型占用最多的内存和计算资源来表达数据和进行操作。可以用于有限元分析、计算几何和几何建模这类领域。</p>
+<h3 id="vtkUnstucturedGridBase类接口"><a href="#vtkUnstucturedGridBase类接口" class="headerlink" title="vtkUnstucturedGridBase类接口"></a><strong>vtkUnstucturedGridBase类接口</strong></h3><p>vtkUnstructuredGrid 类继承自 vtkUnstructuredGridBase 类， vtkUnstructuredGrid 实例由几何点+拓扑结构组成。</p>
+<h3 id="创建（非结构化网格数据集）的一般步骤"><a href="#创建（非结构化网格数据集）的一般步骤" class="headerlink" title="创建（非结构化网格数据集）的一般步骤"></a>创建（非结构化网格数据集）的一般步骤</h3><ol>
+<li>创建 vtkPoints 实例来制定数据集的集合。<code>nodes = vtk.vtkPoints()</code>  </li>
+<li></li>
+</ol>
 
         </div>
 
@@ -459,18 +482,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 滑动窗口</li>
+        <li><strong>Title:</strong> vtk有限元分析可视化基本函数应用（python）</li>
         <li><strong>Author:</strong> SatonoD</li>
         <li><strong>Created at
-                :</strong> 2024-04-20 14:17:34</li>
+                :</strong> 2024-04-29 15:42:53</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-20 16:21:09
+                    :</strong> 2024-04-30 15:20:59
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/20/滑动窗口/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/29/vtk可视化基本函数应用/
         </li>
         <li>
             <strong>
@@ -495,29 +518,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/04/21/%E6%95%B0%E7%BB%84-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E4%BA%BA%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">数组/字符串个人刷题总结记录</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/18/%E5%88%86%E6%B2%BB/"
+                        href="/2024/04/27/%E5%9B%9E%E6%BA%AF%E4%B8%AA%E4%BA%BA%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">分治</span>
+                                <span class="post-nav-title-item">回溯个人刷题记录</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -580,8 +588,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">滑动窗口</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84"><span class="nav-text">209. 长度最小的子数组 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2"><span class="nav-text">3. 无重复字符的最长子串 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2"><span class="nav-text">30. 串联所有单词的子串 </span></a></li></ol>
+        <div class="page-title">vtk有限元分析可视化基本函数应用（python）</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vtk%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="nav-text">vtk面向对象设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%A7%80%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">优秀的软件设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="nav-text">面向对象的编程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-text">计算机图形学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93"><span class="nav-text">渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%A8%A1%E5%9E%8B-%E2%80%94%E2%80%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">图形模型 —— 可视化工具包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E9%81%93"><span class="nav-text">可视化管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%BA%94%E7%94%A8"><span class="nav-text">有限元分析应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0"><span class="nav-text">基本函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vtk-vtkUnstructuredGrid"><span class="nav-text">vtk.vtkUnstructuredGrid()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vtkUnstucturedGridBase%E7%B1%BB%E6%8E%A5%E5%8F%A3"><span class="nav-text">vtkUnstucturedGridBase类接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%EF%BC%88%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E7%BD%91%E6%A0%BC%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%89%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="nav-text">创建（非结构化网格数据集）的一般步骤</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
