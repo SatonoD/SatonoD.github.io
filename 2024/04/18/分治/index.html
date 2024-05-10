@@ -26,7 +26,7 @@
 <meta property="og:description" content="孩子们我回来了今天做这个题目，想起来以前做过的题：LC106. 从中序与后序遍历序列构造二叉树  给定两个整数数组 inorder 和 postorder ，其中 inorder 是二叉树的中序遍历， postorder 是同一棵树的后序遍历，请你构造并返回这颗 二叉树 。 今天做的是   LCR 124. 推理二叉树  实际上，就是从前序与中序遍历序列构造二叉树。 事实上，根据二叉树的性质，我们">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-18T08:39:34.000Z">
-<meta property="article:modified_time" content="2024-04-18T14:10:28.902Z">
+<meta property="article:modified_time" content="2024-05-06T14:07:28.987Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -360,7 +360,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">17</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -414,8 +414,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-18 22:10:28</span>
-            <span class="mobile">2024-04-18 22:10:28</span>
+            <span class="desktop">2024-05-06 22:07:28</span>
+            <span class="mobile">2024-05-06 22:07:28</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -461,7 +461,9 @@
 
 <p>不过，明天复习一下。</p>
 <h2 id="LCR-159-库存管理-III"><a href="#LCR-159-库存管理-III" class="headerlink" title="LCR 159. 库存管理 III"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/" >LCR 159. 库存管理 III <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>仓库管理员以数组 stock 形式记录商品库存表，其中 stock[i] 表示对应商品库存余量。请返回库存余量最少的 cnt 个商品余量，返回 顺序不限。</p>
-
+<h2 id="148-排序链表"><a href="#148-排序链表" class="headerlink" title="148. 排序链表"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-list/?envType=study-plan-v2&envId=top-interview-150" >148. 排序链表 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给你链表的头结点 <code>head</code> ，请将其按 <strong>升序</strong> 排列并返回 <strong>排序后的链表</strong> 。</p>
+<p>有点想不出来，</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sortList</span>(<span class="params">self, head</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 二分法分治归并排序</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        slow, fast = head, head.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">while</span> fast <span class="keyword">and</span> fast.<span class="built_in">next</span>:</span><br><span class="line">            fast, slow = fast.<span class="built_in">next</span>.<span class="built_in">next</span>, slow.<span class="built_in">next</span></span><br><span class="line">        mid, slow.<span class="built_in">next</span> = slow.<span class="built_in">next</span>, <span class="literal">None</span></span><br><span class="line">        left, right = self.sortList(head), self.sortList(mid)</span><br><span class="line">        h = res = ListNode(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">while</span> left <span class="keyword">and</span> right:</span><br><span class="line">            <span class="keyword">if</span> left.val &lt; right.val:</span><br><span class="line">                h.<span class="built_in">next</span>, left = left, left.<span class="built_in">next</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                h.<span class="built_in">next</span>, right = right, right.<span class="built_in">next</span></span><br><span class="line">            h = h.<span class="built_in">next</span></span><br><span class="line">        h.<span class="built_in">next</span> = left <span class="keyword">if</span> left <span class="keyword">else</span> right</span><br><span class="line">        <span class="keyword">return</span> res.<span class="built_in">next</span></span><br></pre></td></tr></table></figure></div>
         </div>
 
         
@@ -475,7 +477,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-18 22:10:28
+                    :</strong> 2024-05-06 22:07:28
             </li>
         
         <li>
@@ -590,7 +592,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">分治</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-152-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-text">LCR 152. 验证二叉搜索树的后序遍历序列 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-170-%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0"><span class="nav-text">LCR 170. 交易逆序对的总数 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-159-%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86-III"><span class="nav-text">LCR 159. 库存管理 III </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-152-%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-text">LCR 152. 验证二叉搜索树的后序遍历序列 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-170-%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0"><span class="nav-text">LCR 170. 交易逆序对的总数 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LCR-159-%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86-III"><span class="nav-text">LCR 159. 库存管理 III </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8"><span class="nav-text">148. 排序链表 </span></a></li></ol>
 
     </div>
 </div>
@@ -623,7 +625,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        17 posts in total
+                        23 posts in total
                     </span>
                     
                 </p>

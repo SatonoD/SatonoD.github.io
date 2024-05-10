@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/04/08/贪心算法/"/>
+    <link rel="canonical" href="http://example.com/2024/05/10/tcp协议相关知识/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="贪心算法一般按如下步骤进行：① 建立数学模型来描述问题② 把求解的问题分成若干个子问题③ 对每个子问题求解，得到子问题的局部最优解④ 把子问题的解局部最优解合成原来解问题的一个解    贪心算法 + 单调栈问题LC 402. 移掉 K 位数字 给你一个以字符串表示的非负整数 num 和一个整数 k ，移除这个数中的 k 位数字，使得剩下的数字最小。请你以字符串形式返回这个最小的数字。 本题贪心的策">
+        <meta name="description" content="TCP和UDP协议TCP和UDP协议区别 连接性TCP 是一种面向连接的协议，这意味着在数据传输开始之前，必须先在发送方和接收方之间建立连接。这个过程通常涉及一个称为三次握手的过程。一对一的连接。UDP 是一种无连接的协议，发送数据之前不需要建立连接，数据可以直接发送到接收方。即刻传输数据。即刻传输数据。 可靠性TCP 提供可靠的服务，确保数据包正确无误地按顺序到达目的地。它通过序列号、确认响应、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="贪心算法">
-<meta property="og:url" content="http://example.com/2024/04/08/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="TCP协议相关知识">
+<meta property="og:url" content="http://example.com/2024/05/10/TCP%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="贪心算法一般按如下步骤进行：① 建立数学模型来描述问题② 把求解的问题分成若干个子问题③ 对每个子问题求解，得到子问题的局部最优解④ 把子问题的解局部最优解合成原来解问题的一个解    贪心算法 + 单调栈问题LC 402. 移掉 K 位数字 给你一个以字符串表示的非负整数 num 和一个整数 k ，移除这个数中的 k 位数字，使得剩下的数字最小。请你以字符串形式返回这个最小的数字。 本题贪心的策">
+<meta property="og:description" content="TCP和UDP协议TCP和UDP协议区别 连接性TCP 是一种面向连接的协议，这意味着在数据传输开始之前，必须先在发送方和接收方之间建立连接。这个过程通常涉及一个称为三次握手的过程。一对一的连接。UDP 是一种无连接的协议，发送数据之前不需要建立连接，数据可以直接发送到接收方。即刻传输数据。即刻传输数据。 可靠性TCP 提供可靠的服务，确保数据包正确无误地按顺序到达目的地。它通过序列号、确认响应、">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-08T08:04:43.000Z">
-<meta property="article:modified_time" content="2024-04-15T01:10:39.516Z">
+<meta property="article:published_time" content="2024-05-10T11:49:02.000Z">
+<meta property="article:modified_time" content="2024-05-10T14:55:50.627Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -40,7 +40,7 @@
     
     <title>
         
-            贪心算法 -
+            TCP协议相关知识 -
         
         晦冥を照らせ永遠の耀き
     </title>
@@ -386,7 +386,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">贪心算法</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">TCP协议相关知识</h1>
                 </div>
             
             </div>
@@ -407,15 +407,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-08 16:04:43</span>
-        <span class="mobile">2024-04-08 16:04:43</span>
+        <span class="desktop">2024-05-10 19:49:02</span>
+        <span class="mobile">2024-05-10 19:49:02</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-15 09:10:39</span>
-            <span class="mobile">2024-04-15 09:10:39</span>
+            <span class="desktop">2024-05-10 22:55:50</span>
+            <span class="mobile">2024-05-10 22:55:50</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -442,21 +442,123 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>贪心算法一般按如下步骤进行：<br>① 建立数学模型来描述问题<br>② 把求解的问题分成若干个子问题<br>③ 对每个子问题求解，得到子问题的局部最优解<br>④ 把子问题的解局部最优解合成原来解问题的一个解   </p>
-<h1 id="贪心算法-单调栈问题"><a href="#贪心算法-单调栈问题" class="headerlink" title="贪心算法 + 单调栈问题"></a>贪心算法 + 单调栈问题</h1><h2 id="LC-402-移掉-K-位数字"><a href="#LC-402-移掉-K-位数字" class="headerlink" title="LC 402. 移掉 K 位数字"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-k-digits/description" >LC 402. 移掉 K 位数字 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给你一个以字符串表示的非负整数 <code>num</code> 和一个整数 <code>k</code> ，移除这个数中的 <code>k</code> 位数字，使得剩下的数字最小。请你以字符串形式返回这个最小的数字。</p>
-<p>本题贪心的策略很简单，很好想。根据数字的特性，一定是优先删除从左到右第一个开始递减的数字。即从第一个局部最大值开始删除。</p>
-<p>官方解答给出了很好的表达</p>
-<p>给定一个长度为 <code>n</code> 的数字序列 $$[ D_0, D_1, D_2, D_3, …,D_{n−1}]$$<br>，从左往右找到第一个位置 <code>i</code>（i&gt;0） 使得 $$D_i&lt;D_{i−1} ，并删去D_{i-1}$$<br>如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p>
-<p>直接暴力计算的方法很好想，但是，如果数列为单调不降的，时间复杂度将来到O（nk）！<br>那么我们也可以考虑每次要删除数字的时候，从上一个数字继续检查单调性就可以了。那么栈这一数据结构就非常适合我们的问题了！每到需要删除的时候，我们直接将其从栈中弹出，然后k值减一就可以实现了。<br>剩下的，就是注意删去前缀0的问题了</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeKdigits</span>(<span class="params">self, num, k</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type num: str</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        numStack = []</span><br><span class="line">        <span class="comment"># 构建单调递增的数字串</span></span><br><span class="line">        <span class="keyword">for</span> digit <span class="keyword">in</span> num:</span><br><span class="line">            <span class="keyword">while</span> k <span class="keyword">and</span> numStack <span class="keyword">and</span> numStack[-<span class="number">1</span>] &gt; digit:</span><br><span class="line">                numStack.pop()</span><br><span class="line">                k -= <span class="number">1</span></span><br><span class="line">            numStack.append(digit)</span><br><span class="line">        </span><br><span class="line">        finalStack = numStack[:-k] <span class="keyword">if</span> k <span class="keyword">else</span> numStack</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(finalStack).lstrip(<span class="string">&#x27;0&#x27;</span>) <span class="keyword">or</span> <span class="string">&#x27;0&#x27;</span></span><br></pre></td></tr></table></figure></div>
+            <h2 id="TCP和UDP协议"><a href="#TCP和UDP协议" class="headerlink" title="TCP和UDP协议"></a>TCP和UDP协议</h2><h3 id="TCP和UDP协议区别"><a href="#TCP和UDP协议区别" class="headerlink" title="TCP和UDP协议区别"></a>TCP和UDP协议区别</h3><ol>
+<li>连接性<br>TCP 是一种面向连接的协议，这意味着在数据传输开始之前，必须先在发送方和接收方之间建立连接。这个过程通常涉及一个称为三次握手的过程。一对一的连接。<br>UDP 是一种无连接的协议，发送数据之前不需要建立连接，数据可以直接发送到接收方。即刻传输数据。即刻传输数据。</li>
+<li>可靠性<br>TCP 提供可靠的服务，确保数据包正确无误地按顺序到达目的地。它通过序列号、确认响应、重传机制和错误检测等技术来实现这一点。<br>UDP 不保证数据的可靠传输，没有内建的错误检测和纠正机制，发送的数据包可能会丢失或错序到达。</li>
+<li>速度和效率<br>TCP 由于其建立连接、确认和重传等机制，相对于UDP来说，速度较慢，数据传输效率较低。<br>UDP 由于缺乏复杂的控制机制，能够提供更快的数据传输速度，适用于对实时性要求高的应用，如视频流、在线游戏等。</li>
+<li>数据流控制<br>TCP 提供流量控制和拥塞控制机制，可以根据网络条件调整数据的发送速率，避免网络拥塞。<br>UDP 不提供流量控制，发送数据的速率不受网络条件的限制，这可能会导致网络拥塞。</li>
+<li>头部开销<br>TCP 的头部开销较大，最小为20字节，因为它需要携带许多控制信息。<br>UDP 的头部开销较小，固定为8字节，使得数据包更加轻便。</li>
+<li>传输方式<br>TCP是流式传输，没有边界，但保证顺序和可靠<br>UDP是一个包一个包的发送，有边界。但是可能会丢包和乱序</li>
+</ol>
+<h3 id="TCP和UDP协议应用场景"><a href="#TCP和UDP协议应用场景" class="headerlink" title="TCP和UDP协议应用场景"></a>TCP和UDP协议应用场景</h3><p><strong>TCP适用场景</strong></p>
+<p>1.数据传输的可靠性非常重要的应用：<br>电子邮件（SMTP, POP, IMAP）：确保邮件完整无误地传输。<br>网页浏览（HTTP, HTTPS）：需要完整的网页内容加载。<br>文件传输（FTP, SFTP）：保证文件数据的完整性和正确性。  </p>
+<p>2.需要数据顺序正确的应用：<br>数据库同步：数据的顺序和完整性对数据库操作至关重要。<br>远程终端访问（SSH, Telnet）：命令和响应需要按正确的顺序处理。</p>
+<p>3.需要防止数据丢失的应用：<br>大多数的金融交易应用：如在线银行和电子支付系统，这些应用不能容忍任何数据的丢失。</p>
+<p><strong>UDP适用场景</strong></p>
+<p>1.实时应用，对速度和效率要求高，可以容忍一定的数据丢失：<br>视频会议和实时视频流：如VoIP、在线直播，这些应用更注重流畅度而非每一个数据包的完整。<br>实时多人游戏：需要快速的交互和低延迟。</p>
+<p>2.广播或多播传输：</p>
+<p>多媒体内容分发：如IPTV和在线广播服务，UDP能够有效地向多个接收者同时发送数据。<br>网络广播应用：如某些形式的数据同步或实时信息发布。</p>
+<p>3.简单的查询-响应通信：</p>
+<p>DNS查询：DNS解析通常使用UDP进行快速的查询和响应。<br>SNMP（简单网络管理协议）：用于网络设备的监控和管理，通常使用UDP因其低开销。</p>
+<h3 id="TCP可靠连接是如何连接的？"><a href="#TCP可靠连接是如何连接的？" class="headerlink" title="TCP可靠连接是如何连接的？"></a>TCP可靠连接是如何连接的？</h3><p>TCP（传输控制协议）被称为一种可靠的连接，是因为它提供了多种机制来确保数据在网络中的安全、准确和有序传输。以下是TCP实现可靠性的关键特性和机制：</p>
+<ol>
+<li>连接的建立与终止<br>三次握手：在数据传输开始之前，TCP使用一个称为“三次握手”的过程来建立一个稳定的连接。这个过程包括交换三个包以确认双方都准备好发送和接收数据，这确保了连接的可靠性和同步。<br>四次挥手：TCP连接的终止使用四次挥手过程，确保双方都已完成数据发送，防止数据丢失。</li>
+<li>数据包的顺序保证<br><strong>序列号</strong>：TCP为每个数据包分配一个序列号，这使得接收方能够按照发送顺序重新排列接收到的数据包。这对于防止数据包的重排序非常重要。</li>
+<li>数据完整性<br><strong>校验和</strong>：TCP头部包含一个校验和字段，用于检查数据在传输过程中是否被损坏。如果检测到错误，受影响的数据包会被丢弃，并请求重传。</li>
+<li>确认和重传机制<br><strong>确认应答</strong>：TCP接收方会对收到的数据包发送一个确认（ACK）应答，表明数据已成功接收。<br><strong>超时重传</strong>：如果发送方在预定时间内没有收到确认应答，它会重传那些可能丢失或错误的数据包。</li>
+<li>流量控制<br>滑动窗口：TCP使用滑动窗口机制来控制发送的数据量，确保接收方不会被发送方的数据淹没。这个机制允许发送方根据接收方的处理能力调整数据发送的速率。</li>
+<li>拥塞控制<br>拥塞避免算法：TCP实现了几种拥塞控制算法（如慢启动、拥塞避免、快速重传和快速恢复），以减少网络中的拥堵情况。这些算法通过动态调整数据传输速率来响应网络条件的变化。</li>
+</ol>
+<h2 id="典型网络模型"><a href="#典型网络模型" class="headerlink" title="典型网络模型"></a>典型网络模型</h2><ol>
+<li><p>OSI模型（开放系统互联模型）<br>层数：7层<br>层级：<br>物理层：处理原始比特流的传输。<br>数据链路层：处理帧的传输，错误检测和修正。<br>网络层：处理数据包的路由和转发。<br>传输层：提供端到端的通信服务。<br>会话层：管理会话和连接。<br>表示层：数据格式化、加密和解密。<br>应用层：提供网络服务给应用程序。<br>用途：OSI模型是教育和理论讨论中常用的模型，用于帮助理解不同网络功能的分层。</p>
+</li>
+<li><p>TCP&#x2F;IP模型<br>层数：4层<br>层级：<br>网络接口层：类似于OSI模型的物理层和数据链路层。<br>网络层：相当于OSI模型的网络层，负责IP地址和路由。<br>传输层：包括TCP和UDP，提供端到端的数据传输。<br>应用层：包括所有高级的网络服务，如HTTP、FTP等。<br>用途：TCP&#x2F;IP模型是实际互联网的基础，是最广泛使用的网络模型。  </p>
+</li>
+<li><p>五层互联网模型<br>层数：5层<br>层级：<br>物理层<br>数据链路层<br>网络层<br>传输层<br>应用层<br>用途：这是TCP&#x2F;IP模型的一个变种，更详细地分离了物理层和数据链路层，使其更接近于OSI模型的结构。</p>
+</li>
+</ol>
+<h2 id="TCP建立连接"><a href="#TCP建立连接" class="headerlink" title="TCP建立连接"></a>TCP建立连接</h2><h3 id="三次握手（建立连接）"><a href="#三次握手（建立连接）" class="headerlink" title="三次握手（建立连接）"></a>三次握手（建立连接）</h3><p>三次握手是TCP协议用来建立一个可靠的连接的过程。它包括以下三个步骤：</p>
+<ol>
+<li><strong>SYN（同步）</strong>：</li>
+</ol>
+<p>客户端发送一个SYN（synchronize）标志位设置为1的TCP段到服务器，以初始化一个连接。在这个段中，客户端选择一个初始的序列号（x）。（基于时钟的随机生成）<br>此段的目的是告诉服务器客户端打算建立连接，并告知其序列号的起始值。</p>
+<p>第一次握手丢失，会发生超时重传机制，每次超时时间为上次2倍，默认第五次断开。</p>
+<ol start="2">
+<li><strong>SYN-ACK（同步-确认）</strong>：</li>
+</ol>
+<p>服务器接收到客户端的SYN后，发送一个SYN标志位和ACK（acknowledgment）标志位都设置为1的响应。这个响应包含服务器的随机初始序列号（y）和对客户端序列号的确认（x+1）。<br>该响应表示服务器也同意建立连接，并已准备好接收客户端发送的数据。</p>
+<p>第二次握手丢失，双方都会触发超时重传机制。</p>
+<ol start="3">
+<li><strong>ACK（确认）</strong>：ACK报文</li>
+</ol>
+<p>客户端收到服务器的SYN-ACK后，发送一个ACK标志位设置为1的段，确认号设置为y+1。<br>发送给服务端，这次报文可以携带客户到服务端的数据。这个ACK完成了握手过程，之后客户端和服务器就可以开始数据传输。</p>
+<p>第三次握手丢失，服务器超时重传</p>
+<h3 id="四次挥手（终止连接）"><a href="#四次挥手（终止连接）" class="headerlink" title="四次挥手（终止连接）"></a>四次挥手（终止连接）</h3><p>四次挥手是TCP协议用来终止一个已建立的连接的过程。这个过程稍微复杂，涉及四个步骤：</p>
+<p>1.FIN（结束）：</p>
+<p>客户端完成数据发送后，发送一个FIN标志位设置为1的段给服务器，表示没有数据发送了，请求关闭连接。<br>这告诉服务器客户端已经结束数据传输。</p>
+<p>第一次挥手丢失，客户端超时重传，最后会断开连接</p>
+<p>2.ACK（确认）：</p>
+<p>服务器接收到FIN后，发送一个ACK标志位设置为1的段，确认号为客户端的FIN序列号加1。<br>这表示服务器已知晓客户端的终止请求，但可能还有数据需要发送给客户端。</p>
+<p>客户端超时重传，因为ACK没有超时重传机制。</p>
+<p>3.FIN（结束）：</p>
+<p>服务器发送完所有剩余数据后，也发送一个FIN标志位设置为1的段给客户端，请求关闭连接。<br>这表示服务器也准备好关闭连接了。</p>
+<p>服务器重传，服务器断开</p>
+<p>4.ACK（确认）：</p>
+<p>客户端接收到服务器的FIN后，发送一个ACK标志位设置为1的段，确认号为服务器的FIN序列号加1。<br>客户端等待一段时间（称为TIME_WAIT）以确保服务器接收到最后一个ACK，然后关闭连接。</p>
+<h3 id="SYN攻击"><a href="#SYN攻击" class="headerlink" title="SYN攻击"></a>SYN攻击</h3><p>在SYN攻击中，攻击者大量发送伪造源IP地址的SYN包到目标服务器。因为源地址是伪造的，所以目标服务器发送的SYN-ACK响应无法到达真正的客户端，因此不会收到最后一个必需的ACK包。这导致服务器的半连接队列迅速填满，等待完成握手的连接。由于以下几个原因，服务器变得特别脆弱：</p>
+<pre><code>资源消耗：每个半连接都会占用服务器的资源，包括内存和CPU。当攻击者发送大量的SYN包时，服务器资源被迅速耗尽，导致正常的连接请求无法得到处理。
 
-<h1 id="贪心算法-序列"><a href="#贪心算法-序列" class="headerlink" title="贪心算法 + 序列"></a>贪心算法 + 序列</h1><h2 id="LC-334-递增的三元子序列"><a href="#LC-334-递增的三元子序列" class="headerlink" title="LC 334. 递增的三元子序列"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/increasing-triplet-subsequence/" >LC 334. 递增的三元子序列 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给你一个整数数组 <code>nums</code> ，判断这个数组中是否存在长度为 3 的递增子序列。<br>如果存在这样的三元组下标 <code>(i, j, k)</code> 且满足 <code>i &lt; j &lt; </code>k ，使得 n<code>ums[i] &lt; nums[j] &lt; nums[k]</code> ，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
-<p>这个问题的话，我们可以从头遍历到尾。想象有三个指针<code>first</code>、<code>second</code>和<code>third</code>。</p>
-<p>初始时，first &#x3D; nums[0]，second &#x3D; +∞。对于 1 ≤ i &lt;n1，当遍历到下标 i 时，令 num &#x3D; nums[i]，进行如下操作：<br><code>if num &gt; second</code>，则找到了一个递增的三元子序列，返回 <code>true</code> ；<br><code>elif num &gt; first</code>，则将 second 的值更新为 num；<br><code>else</code> first 的值更新为 num。</p>
-<p>如果遍历结束时没有找到递增的三元子序列，返回 false。</p>
-<h2 id="LC-55-跳跃游戏"><a href="#LC-55-跳跃游戏" class="headerlink" title="LC 55. 跳跃游戏"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/jump-game/" >LC 55. 跳跃游戏 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><p>给你一个非负整数数组 <code>nums</code> ，你最初位于数组的 第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。<br>判断你是否能够到达最后一个下标，如果可以，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
-<p>我们直接使用贪心算法，从左到右开始遍历数组，每当能更新到最远的位置，就把它记录下来，直到能够更新到最后一个数，或者遍历到的数已经超过了当前能更新的最远的位置！！！！</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">canJump</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n, rightmost = <span class="built_in">len</span>(nums), <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> i &lt;= rightmost:</span><br><span class="line">                rightmost = <span class="built_in">max</span>(rightmost, i + nums[i])</span><br><span class="line">                <span class="keyword">if</span> rightmost &gt;= n - <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure></div>
+队列限制：半连接队列的大小是有限的。当这个队列被填满后，新的合法连接请求将被拒绝，造成服务不可用。
+
+无需完成连接：攻击者在此类型的攻击中并不需要建立一个真正的TCP连接，他们只需要发送SYN包。这使得发起攻击相对容易，且难以追踪到真正的攻击者。
+
+放大效应：少量的输入（发送SYN包）可以造成大量的输出（服务器资源耗尽），这种放大效应使得SYN攻击非常有效。
+</code></pre>
+<p><strong>防御措施</strong><br>为了防御SYN攻击，可以采取以下一些措施：</p>
+<pre><code>增加SYN队列大小：扩大半连接队列可以让服务器处理更多的半连接，但这不是根本解决方案。  
+使用SYN Cookies：这是一种不需要在服务器上存储半连接状态的技术，可以有效减少资源的占用。  
+部署防火墙和入侵检测系统：这些系统可以帮助识别和阻止异常的SYN流量。  
+限制IP地址的连接请求：对于异常多的来自单一IP地址的连接请求，可以进行限制或直接阻止。  
+使用负载均衡器：通过分散流量到多个服务器，可以降低单一服务器面临的风险。
+</code></pre>
+<h2 id="其他互联网常见应用和协议"><a href="#其他互联网常见应用和协议" class="headerlink" title="其他互联网常见应用和协议"></a>其他互联网常见应用和协议</h2><h3 id="常见协议"><a href="#常见协议" class="headerlink" title="常见协议"></a>常见协议</h3><ol>
+<li><strong>HTTP（超文本传输协议）</strong></li>
+</ol>
+<p>用途：HTTP是用于从Web服务器传输超文本到本地浏览器或其他服务器的协议。它支持Web页面请求和数据传输。<br>原理：无状态协议：服务器不保留任何客户端的状态信息。<br>请求&#x2F;响应模型：客户端发送请求，服务器回复响应。请求和响应包含头部（定义操作参数）和可能的消息体（数据）。<br>状态码：404 Not Found 请求的资源在服务器上不存在或者未找到；502 Bad Gateway 服务器自身工作正常，访问后端服务器发生错误。  </p>
+<pre><code>1xx：提示信息：中间状态  
+2xx：成功  
+3xx：客户端请求的资源发生了变动，需要重新发送请求  
+4xx：客户端发送报文有误，服务器无法处理。
+5xx：服务器端错误，服务器处理时内部发生错误
+</code></pre>
+<p><strong>HTTP&#x2F;1.1 的优化</strong><br>持久连接：HTTP&#x2F;1.1 默认使用持久连接，减少了建立和关闭连接的频率，从而减少了延迟。<br>管线化：允许在同一连接上发送多个请求而不用等待响应。<br>优点：简单，灵活，易于扩展，应用广泛和跨平台。  缺点：不安全</p>
+<ol start="2">
+<li><strong>HTTPS（安全超文本传输协议）</strong></li>
+</ol>
+<p>用途：HTTPS是HTTP的安全版本，用于加密HTTP请求和响应。<br>原理：<br><strong>SSL&#x2F;TLS</strong>：利用SSL（安全套接字层）或TLS（传输层安全）协议来加密数据，保护数据在互联网上的传输安全。<br><strong>证书</strong>：使用证书来验证服务器的身份，防止中间人攻击。  </p>
+<ol start="3">
+<li>FTP（文件传输协议）<br>用途：FTP用于在网络上的计算机之间传输文件。<br>原理：<br>控制和数据连接：FTP使用两个TCP连接，一个用于控制信息（如登录凭据），另一个用于实际的文件数据传输。<br>支持匿名访问：FTP可以配置为允许用户匿名上传或下载文件。</li>
+<li>SMTP（简单邮件传输协议）<br>用途：SMTP是用于发送电子邮件的协议。<br>原理：<br>推送模型：SMTP服务器将邮件推送到另一个SMTP服务器或最终的邮件传输代理（MTA）。<br>队列：邮件可能会在多个SMTP服务器上排队，直到最终到达接收者的邮箱。</li>
+<li>DNS（域名系统）<br>用途：DNS用于将域名（如 <a class="link"   target="_blank" rel="noopener" href="http://www.example.com)转换为ip地址./" >www.example.com）转换为IP地址。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>原理：<br>分布式数据库：全球范围内的服务器网络存储域名与IP地址的映射。<br>递归和迭代查询：DNS查询可能需要多个步骤，先从本地DNS服务器开始，可能逐级查询到根、顶级域和权威服务器。</li>
+<li>VPN（虚拟私人网络）<br>用途：VPN用于在公共网络上创建加密的私人网络连接。<br>原理：<br>隧道协议：数据通过加密的隧道传输，确保数据的私密性和安全性。<br>端到端加密：从用户设备到VPN服务器的所有数据都进行加密处理。</li>
+</ol>
+<h3 id="TLS-握手"><a href="#TLS-握手" class="headerlink" title="TLS 握手"></a>TLS 握手</h3><p>TLS工作在TCP&#x2F;IP模型的传输层上，位于应用层和传输层之间。它通过以下几个步骤来确保数据传输的安全性：（信息加密，校验机制，身份证书）</p>
+<p>握手阶段：<br>1）客户端首先发生” Client Hello “ 消息，包括版本号、密码套件列表以及随机数。<br>2）服务端收到后确认以上是否支持，返回 “ Server Hello “<br>3）客户端生成并加密随机数，通过“ Client Key Exchange”，传给服务器<br>4）服务器响应：发“ Change Cipher Spec” 和 “Encrypted Handshake Message”</p>
+<p>TLS握手是建立TLS连接的第一步，它负责协商加密算法、验证双方的身份、并生成用于加密会话的密钥。</p>
+<p>客户端和服务器交换“hello”消息，包含各自支持的TLS版本、加密算法列表和随机数。  </p>
+<p>服务器身份验证：服务器向客户端发送其数字证书（通常由可信的证书颁发机构签发）。<br>密钥交换：根据协商的加密方法，双方协商或交换生成会话密钥的信息。<br>客户端身份验证（可选）：在需要的场景中，客户端也会发送其证书给服务器进行身份验证。<br>记录协议：一旦握手完成，TLS记录协议负责加密应用层数据并确保数据的完整性和机密性。它使用握手阶段协商的密钥和算法来加密数据。</p>
+<p>会话管理：TLS支持会话恢复机制，允许客户端和服务器存储会话的特定参数，以便将来快速建立新的安全连接而无需重复完整的握手过程。</p>
+<h3 id="RSA-握手"><a href="#RSA-握手" class="headerlink" title="RSA 握手"></a>RSA 握手</h3><p>RSA算法包括密钥的生成、加密和解密过程：数学方法</p>
+<p>RSA握手过程<br>客户端向服务器发送“ClientHello”消息：</p>
+<p>这个消息包括客户端支持的TLS版本、加密套件列表、随机数（Client Random）等信息。<br>服务器回应“ServerHello”消息：</p>
+<p>服务器选择一个客户端也支持的加密套件和TLS版本，并发送一个随机数（Server Random）。<br>服务器发送证书：</p>
+<p>服务器发送其数字证书给客户端。该证书包含了服务器的公钥，通常是由一个受信任的证书颁发机构（CA）签发的。<br>服务器的密钥交换消息（可选）：</p>
+<p>如果使用的加密套件要求服务器发送额外的密钥交换参数，服务器将在这一步骤中发送这些信息。<br>服务器发送“ServerHelloDone”消息：</p>
+<p>这表示服务器已完成握手消息的初始阶段。<br>客户端响应并加密生成的预主密钥（pre-master secret）：</p>
+<p>客户端生成一个随机的预主密钥，然后使用服务器的公钥（从服务器的证书中获得）对其进行加密。<br>加密后的预主密钥被发送回服务器。<br>双方计算会话密钥：</p>
+<p>服务器使用自己的私钥解密接收到的加密预主密钥。<br>客户端和服务器都使用预主密钥以及之前交换的“Client Random”和“Server Random”计算出会话密钥。这个会话密钥将用于本次会话的加密和数据完整性保护。<br>客户端和服务器交换“Finished”消息：</p>
+<p>这些消息被用来确认握手过程并验证对方的身份。</p>
+<p>但是不支持前向保密</p>
 
         </div>
 
@@ -464,18 +566,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 贪心算法</li>
+        <li><strong>Title:</strong> TCP协议相关知识</li>
         <li><strong>Author:</strong> SatonoD</li>
         <li><strong>Created at
-                :</strong> 2024-04-08 16:04:43</li>
+                :</strong> 2024-05-10 19:49:02</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-15 09:10:39
+                    :</strong> 2024-05-10 22:55:50
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/08/贪心算法/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/05/10/TCP协议相关知识/
         </li>
         <li>
             <strong>
@@ -500,29 +602,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/04/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%AD%E7%BB%83/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">动态规划训练</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/08/%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"
+                        href="/2024/05/10/proCAST%E5%B8%B8%E8%A7%81%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">元胞自动机</span>
+                                <span class="post-nav-title-item">proCAST常见疑难杂症及其解决方案汇总</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -585,8 +672,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">贪心算法</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95-%E5%8D%95%E8%B0%83%E6%A0%88%E9%97%AE%E9%A2%98"><span class="nav-text">贪心算法 + 单调栈问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LC-402-%E7%A7%BB%E6%8E%89-K-%E4%BD%8D%E6%95%B0%E5%AD%97"><span class="nav-text">LC 402. 移掉 K 位数字 </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95-%E5%BA%8F%E5%88%97"><span class="nav-text">贪心算法 + 序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LC-334-%E9%80%92%E5%A2%9E%E7%9A%84%E4%B8%89%E5%85%83%E5%AD%90%E5%BA%8F%E5%88%97"><span class="nav-text">LC 334. 递增的三元子序列 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LC-55-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F"><span class="nav-text">LC 55. 跳跃游戏 </span></a></li></ol></li></ol>
+        <div class="page-title">TCP协议相关知识</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%92%8CUDP%E5%8D%8F%E8%AE%AE"><span class="nav-text">TCP和UDP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%92%8CUDP%E5%8D%8F%E8%AE%AE%E5%8C%BA%E5%88%AB"><span class="nav-text">TCP和UDP协议区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%92%8CUDP%E5%8D%8F%E8%AE%AE%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">TCP和UDP协议应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%8F%AF%E9%9D%A0%E8%BF%9E%E6%8E%A5%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E7%9A%84%EF%BC%9F"><span class="nav-text">TCP可靠连接是如何连接的？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-text">典型网络模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="nav-text">TCP建立连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%EF%BC%89"><span class="nav-text">三次握手（建立连接）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%88%E7%BB%88%E6%AD%A2%E8%BF%9E%E6%8E%A5%EF%BC%89"><span class="nav-text">四次挥手（终止连接）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYN%E6%94%BB%E5%87%BB"><span class="nav-text">SYN攻击</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%BA%92%E8%81%94%E7%BD%91%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8%E5%92%8C%E5%8D%8F%E8%AE%AE"><span class="nav-text">其他互联网常见应用和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE"><span class="nav-text">常见协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS-%E6%8F%A1%E6%89%8B"><span class="nav-text">TLS 握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA-%E6%8F%A1%E6%89%8B"><span class="nav-text">RSA 握手</span></a></li></ol></li></ol>
 
     </div>
 </div>

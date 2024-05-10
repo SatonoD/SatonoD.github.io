@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="SatonoD">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/05/10/python的那些小知识/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Python的基本数据结构 列表（List）列表是一种有序的集合，可以保存各种类型的数据，并且支持增加、删除和其他多种操作。列表中的元素是可变的，可以通过索引访问。  元组（Tuple）元组与列表类似，也是一种有序的集合，但元组是不可变的。一旦创建了元组，就不能修改其内容。元组通常用于保护数据不被修改。  字典（Dictionary）字典是一种键值对集合，非常适合快速检索数据。字典中的键必须是唯一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python的那些小知识">
+<meta property="og:url" content="http://example.com/2024/05/10/python%E7%9A%84%E9%82%A3%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python的基本数据结构 列表（List）列表是一种有序的集合，可以保存各种类型的数据，并且支持增加、删除和其他多种操作。列表中的元素是可变的，可以通过索引访问。  元组（Tuple）元组与列表类似，也是一种有序的集合，但元组是不可变的。一旦创建了元组，就不能修改其内容。元组通常用于保护数据不被修改。  字典（Dictionary）字典是一种键值对集合，非常适合快速检索数据。字典中的键必须是唯一">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-10T02:04:53.000Z">
+<meta property="article:modified_time" content="2024-05-10T09:02:52.132Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/mond.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/mond.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/mond.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            python的那些小知识 -
+        
+        晦冥を照らせ永遠の耀き
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        晦冥を照らせ永遠の耀き
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"これが生き残る為の俺の足掻きだ","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                晦冥を照らせ永遠の耀き
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">python的那些小知识</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/dia.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">SatonoD</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-05-10 10:04:53</span>
+        <span class="mobile">2024-05-10 10:04:53</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-05-10 17:02:52</span>
+            <span class="mobile">2024-05-10 17:02:52</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h3 id="Python的基本数据结构"><a href="#Python的基本数据结构" class="headerlink" title="Python的基本数据结构"></a>Python的基本数据结构</h3><ol>
+<li><p>列表（List）<br>列表是一种有序的集合，可以保存各种类型的数据，并且支持增加、删除和其他多种操作。列表中的元素是可变的，可以通过索引访问。</p>
+</li>
+<li><p>元组（Tuple）<br>元组与列表类似，也是一种有序的集合，但元组是不可变的。一旦创建了元组，就不能修改其内容。元组通常用于保护数据不被修改。</p>
+</li>
+<li><p>字典（Dictionary）<br>字典是一种键值对集合，非常适合快速检索数据。字典中的键必须是唯一的，并且是不可变类型，如字符串或元组。</p>
+</li>
+<li><p>集合（Set）<br>集合是一个无序的、不包含重复元素的集合类型。它主要用于测试成员资格、删除重复项和进行数学运算如并集、交集、差集等。</p>
+</li>
+</ol>
+<p>这些数据结构各有特点，适用于不同的场景：<br>    列表：适合需要经常修改数据的情况，如添加或删除元素。<br>    元组：适合创建不应更改的数据集，如函数返回多个值。<br>    字典：适合需要关联数据的情况，非常高效地通过键检索值。<br>    集合：适合需要进行集合操作以及需要唯一元素的情况。</p>
+<h3 id="numpy-array与list的区别-优势"><a href="#numpy-array与list的区别-优势" class="headerlink" title="numpy.array与list的区别&#x2F;优势"></a>numpy.array与list的区别&#x2F;优势</h3><ol>
+<li>性能<br>速度：numpy 数组在执行操作时通常比 Python 列表快得多。这是因为 numpy 内部使用优化过的 C 和 Fortran 代码来执行数学运算，而 Python 列表则是由 Python 语言执行，速度较慢。<br>内存效率：numpy 数组在存储大数据集时比 Python 列表的内存效率更高。numpy 数组内的元素通常是同一类型的，允许数组在内存中紧密排列，而 Python 列表则可以包含不同类型的元素，需要更多的存储空间。</li>
+<li>功能<br>广播功能：numpy 提供了广播功能，这允许不同大小的数组在算术运算中进行兼容。这使得数据处理变得更加方便和快捷。<br>复杂数学运算支持：numpy 提供了大量的数学函数库，可以直接在数组上进行操作，如线性代数运算、统计分析等。</li>
+<li>多维数组<br>支持多维数组：numpy 支持多维数组（矩阵），而 Python 列表仅支持一维数组，虽然可以通过列表的列表实现多维数组，但这样做既不方便也不高效。</li>
+<li>索引和切片<br>高级索引和切片：numpy 提供了更多高级的索引和切片方式，使得数据操作更加灵活和强大。</li>
+</ol>
+<h3 id="python数据类型"><a href="#python数据类型" class="headerlink" title="python数据类型"></a>python数据类型</h3><p>Python 是一种动态类型的编程语言，这意味着在编写代码时不需要显式声明变量的数据类型。Python 解释器会在运行时自动推断数据类型。Python 支持多种内置数据类型，这些类型可以分为几个主要类别：数字类型、序列类型、映射（字典）类型、集合类型、布尔类型以及 None 类型。</p>
+<ol>
+<li><p>数字类型<br>1.1 整数（int）：表示没有小数部分的数，可以是正数或负数。例如：3, -5, 42。<br>1.2 浮点数（float）：表示有小数部分的数。例如：3.14, -0.001, 2.0。<br>1.3 复数（complex）：包含实部和虚部，虚部以 j 或 J 表示。例如：2 + 3j。</p>
+</li>
+<li><p>基本数据结构（如上） </p>
+</li>
+<li><p>布尔类型<br>布尔（bool）：表示逻辑值 True 或 False。常用于条件判断和循环控制。</p>
+</li>
+<li><p>None 类型<br>None：特殊的数据类型，表示空值或无值，通常用于表示函数没有明确返回值。</p>
+</li>
+</ol>
+<h3 id="Break和Continuous区别"><a href="#Break和Continuous区别" class="headerlink" title="Break和Continuous区别"></a>Break和Continuous区别</h3><p>break用于结束整个循环。<br>continuous不执行当前循环的statement，运行下一个循环。</p>
+<h3 id="return-和-yield的区别"><a href="#return-和-yield的区别" class="headerlink" title="return 和 yield的区别"></a>return 和 yield的区别</h3><p><code>return</code> 关键字用于从函数中返回结果。当 return 被执行时，函数将立即终止，控制权和 return 后的值将返回给调用者。如果没有指定返回值，函数默认返回 None。</p>
+<p><code>yield</code> 关键字用于从一个函数返回一个值，并暂停执行，保存当前函数的状态，以便在下次从函数调用（或迭代）时从停止的地方继续执行。使用 yield 的函数被称为生成器。</p>
+<p>生成器允许你按需生成值，而不是一次计算并返回所有值，这可以显著减少内存使用并提高计算效率。</p>
+<p>yield 关键字用于从一个函数返回一个值，并暂停执行，保存当前函数的状态，以便在下次从函数调用（或迭代）时从停止的地方继续执行。使用 yield 的函数被称为生成器。</p>
+<p>生成器允许你按需生成值，而不是一次计算并返回所有值，这可以显著减少内存使用并提高计算效率。</p>
+<h3 id="python中的浅拷贝和深拷贝"><a href="#python中的浅拷贝和深拷贝" class="headerlink" title="python中的浅拷贝和深拷贝"></a>python中的浅拷贝和深拷贝</h3><p>这两种拷贝方式对于基本数据类型（如整数、浮点数和字符串）的影响不大，因为这些类型在赋值时自动创建新的实例。然而，对于复合数据类型（如列表、字典、集合等），选择正确的拷贝方式是非常重要的，因为它们可以包含其他对象的引用。</p>
+<p>主要担心这些可变对象：list、dict、set。</p>
+<p>浅拷贝创建一个新对象，但它包含的是对原始对象中包含的对象的引用（即地址），而不是对象的副本。这意味着，如果原始对象包含了对其他对象的引用，则新对象和原始对象将引用同一个子对象。</p>
+<p>深拷贝创建一个新对象，并递归地复制原始对象中包含的所有对象。这意味着它不仅复制了原始对象，还复制了原始对象中的所有子对象（复制了对象的所有引用）。因此，原始对象和新对象不会共享任何子对象。</p>
+<h3 id="range-和-xrange的区别"><a href="#range-和-xrange的区别" class="headerlink" title="range 和 xrange的区别"></a>range 和 xrange的区别</h3><p>在 Python 2 中，range 生成完整列表，而 xrange 生成一个惰性序列，类似于迭代器。在 Python 3中二者已合并range，实现的是 xrange</p>
+<h3 id="is和-的区别"><a href="#is和-的区别" class="headerlink" title="is和&#x3D;&#x3D;的区别"></a>is和&#x3D;&#x3D;的区别</h3><p>is判断两个对象的内存地址是否相同<br>&#x3D;&#x3D;判断两个对象的值是否相同</p>
+<h3 id="lambda-函数"><a href="#lambda-函数" class="headerlink" title="lambda 函数"></a>lambda 函数</h3><p>在 Python 中，lambda 函数是一种小型的匿名函数。lambda 函数可以接收任意数量的参数，但只能有一个表达式。它们通常用于需要函数对象的地方，但又希望这个函数简单到足以用一行代码表示。</p>
+<p>lambda 函数的基本语法如下：</p>
+<p>lambda arguments: expression</p>
+<p>arguments 是传递给 lambda 函数的参数，可以是多个，用逗号分隔。<br>expression 是一个关于参数的表达式，其结果就是 lambda 函数的返回值。</p>
+<h3 id="单引号、双引号、三引号区别"><a href="#单引号、双引号、三引号区别" class="headerlink" title="单引号、双引号、三引号区别"></a>单引号、双引号、三引号区别</h3><p>单引号双引号没有区别，都可以用来表示字符串；<br>三引号，字符串内可直接换行，且可包含注释。</p>
+<h3 id="python-中传入参数的注意事项："><a href="#python-中传入参数的注意事项：" class="headerlink" title="python 中传入参数的注意事项："></a>python 中传入参数的注意事项：</h3><ol>
+<li><p>参数类型<br><strong>位置参数</strong>：这是最常见的参数类型，调用函数时根据参数的位置来传递值。<br><strong>关键字参数</strong>：允许你通过名称来指定参数，这使得函数调用更加清晰明了。<br><strong>默认参数</strong>：在定义函数时可以为参数提供默认值。使用默认参数可以使函数调用更灵活，同时减少需要传递的参数数量。</p>
+</li>
+<li><p>不可变与可变参数<br><strong>不可变对象</strong>：如整数、字符串和元组。在函数内部修改这些参数不会影响原始对象。<br><strong>可变对象</strong>：如列表和字典。如果在函数内部修改这些参数，调用者会看到这些更改，因为这类参数是通过引用传递的。  </p>
+</li>
+<li><p>*args 和 **kwargs<br>*<strong>args</strong>：允许你将不定数量的位置参数传递给函数。<br>**<strong>kwargs</strong>：允许你将不定数量的关键字参数传递给函数。<br>这两种机制提供了额外的灵活性，尤其是在处理不确定数量的输入参数时。</p>
+</li>
+<li><p>参数传递方式<br><strong>按值传递</strong>：传递的是值的拷贝，对于不可变类型，函数内的修改不会影响原始数据。<br><strong>按引用传递</strong>：传递的是对象的引用，对于可变类型，函数内的修改会影响到原始数  据。<br>Python 中的参数传递实际上是“按对象引用传递”（pass-by-object-reference），这意味着函数接收的是对象引用的拷贝。</p>
+</li>
+<li><p>避免使用可变对象作为默认参数<br>默认参数只在函数定义时计算一次，如果使用了可变对象作为默认参数，那么每次调用该函数时，如果改变了这个参数的值，这个默认参数的值就会改变，可能会导致意外的行为。</p>
+</li>
+</ol>
+<h3 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h3><p>在 Python 中，装饰器是一种非常强大的功能，它允许你在不修改原始函数代码的情况下增加函数的功能。装饰器本质上是一个函数，它接受一个函数作为参数并返回一个新的函数。装饰器可以用来增强函数的行为，实现例如权限检查、日志记录、设置函数执行时间等功能。</p>
+<p>Python 允许你使用 @ 符号（称为“语法糖”）来应用装饰器，这使得装饰器的应用更为简洁和直观。</p>
+<h3 id="函数和变量的作用域"><a href="#函数和变量的作用域" class="headerlink" title="函数和变量的作用域"></a>函数和变量的作用域</h3><p>在Python中，函数或变量的作用域是一个重要概念，它定义了变量或函数名称在程序中可以被访问的区域。Python中的作用域主要分为四种类型：</p>
+<p><em><strong>局部作用域（Local Scope）</strong></em>:</p>
+<p>局部作用域是指在函数内部定义的变量。这些变量只能在函数内部被访问，函数外部无法访问。当函数调用结束后，局部作用域中的变量也会被销毁。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_function</span>():</span><br><span class="line">    x = <span class="number">10</span>  <span class="comment"># 局部变量</span></span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_function()  <span class="comment"># 输出 10</span></span><br><span class="line"><span class="comment"># print(x)  # 这里会引发错误，因为x是在函数内部定义的</span></span><br></pre></td></tr></table></figure></div>
+
+<p><em><strong>全局作用域（Global Scope）</strong></em>:</p>
+<p>全局作用域是在模块级别定义的变量。在整个文件的任何地方都可以访问这些变量，<strong>除非它们被局部作用域中的同名变量遮蔽</strong>。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">20</span>  <span class="comment"># 全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">my_function</span>():</span><br><span class="line">    <span class="built_in">print</span>(x)  <span class="comment"># 访问全局变量x</span></span><br><span class="line"></span><br><span class="line">my_function()  <span class="comment"># 输出 20</span></span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># 输出 20</span></span><br></pre></td></tr></table></figure></div>
+<p><em><strong>嵌套作用域（Enclosing Scope）</strong></em>:</p>
+<p>当一个函数被另一个函数包围时，内部函数可以访问外部函数的局部变量。这种作用域有时也被称为非局部作用域。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">outer_function</span>():</span><br><span class="line">    x = <span class="number">30</span>  <span class="comment"># 局部变量于外部函数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inner_function</span>():</span><br><span class="line">        <span class="built_in">print</span>(x)  <span class="comment"># 访问外部函数的局部变量</span></span><br><span class="line"></span><br><span class="line">    inner_function()</span><br><span class="line"></span><br><span class="line">outer_function()  <span class="comment"># 输出 30</span></span><br></pre></td></tr></table></figure></div>
+<p><strong>内置作用域（Built-in Scope）</strong>:</p>
+<p>Python自带的内置作用域包含了许多内置函数和异常，这些都是全局可用的。例如，print(), len() 等。<br><code>print(max([1, 2, 3]))  # 使用内置函数max，输出 3</code>  </p>
+<p>关键字 global 和 nonlocal:</p>
+<p>global 关键字用来在函数内部声明变量为全局变量。<br>nonlocal 关键字用来在嵌套函数中声明变量为非局部变量。</p>
+<h3 id="解释型语言和编译型语言"><a href="#解释型语言和编译型语言" class="headerlink" title="解释型语言和编译型语言"></a>解释型语言和编译型语言</h3><p>编译型语言是那些需要使用编译器将程序源代码转换成机器语言（通常是二进制格式的可执行文件）的语言。这个转换过程发生在程序运行之前。  </p>
+<pre><code>性能：编译后的代码直接由硬件执行，因此运行速度快。  
+一次编译，多次执行：编译过程只需要进行一次，之后可以多次运行编译后的代码，无需再次编译。  
+平台依赖性：编译出的可执行文件通常是特定于操作系统和硬件的。不同平台需要重新编译。
+</code></pre>
+<p>解释型语言是那些不需要事先编译成机器语言的程序。源代码在程序运行时由解释器逐行读取，解释并执行。</p>
+<p>特点：</p>
+<pre><code>灵活性和便捷性：代码修改后无需重新编译，可以直接运行，便于调试和测试。  
+跨平台性：只要平台上有对应的解释器，相同的源代码可以在不同的操作系统上运行。  
+性能问题：由于代码是在运行时逐行解释的，执行效率通常低于编译型语言。
+</code></pre>
+<h3 id="new-和-init"><a href="#new-和-init" class="headerlink" title="new 和 init"></a><strong>new</strong> 和 <strong>init</strong></h3><p><strong>new</strong> 是一个静态方法，它负责创建一个新的实例，它的主要任务是返回该类的一个实例。  </p>
+<p><strong>init</strong> 是一个实例方法，它用于初始化新创建的对象。<br><strong>init</strong> 并不返回任何值（或者说应该返回 None），它的主要职责是设置对象的初始状态。</p>
+<p>如果需要控制对象的创建过程（例如实现单例模式），可以使用 __new__。如果只需要初始化对象，使用 <strong>init</strong> 就足够了。</p>
+<h3 id="类中self的概念及其三种应用"><a href="#类中self的概念及其三种应用" class="headerlink" title="类中self的概念及其三种应用"></a>类中self的概念及其三种应用</h3><p>在Python中，self 是一个约定俗成的参数名称，它用于引用类的当前实例对象。当定义类的方法时，self 是方法中的第一个参数。通过使用 self，可以在类的方法中访问或修改对象的属性和其他方法。这是面向对象编程的一个核心概念，它使得类的实例可以访问和控制其自身的数据和行为。</p>
+<p>三种应用场景：</p>
+<p><strong>访问实例属性</strong>： self 用于在类的方法中访问实例属性。实例属性是在类的方法中使用 self 创建的属性，它们对每个类的实例是唯一的。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Hello, my name is <span class="subst">&#123;self.name&#125;</span> and I am <span class="subst">&#123;self.age&#125;</span> years old.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Person类的实例</span></span><br><span class="line">person1 = Person(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>)</span><br><span class="line">person1.greet()  <span class="comment"># 输出: Hello, my name is Alice and I am 30 years old.</span></span><br></pre></td></tr></table></figure></div>
+<p>在这个例子中，self.name 和 self.age 是Person类的实例属性，它们在 <code>__init__ </code>方法中被定义。greet 方法通过 self 访问这些属性。</p>
+<p><strong>修改实例属性</strong>： self 还可以用来修改实例的属性。这允许对象在其生命周期内改变状态。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update_age</span>(<span class="params">self, new_age</span>):</span><br><span class="line">        self.age = new_age</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;My new age is <span class="subst">&#123;self.age&#125;</span>.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改person1的年龄</span></span><br><span class="line">person1.update_age(<span class="number">31</span>)</span><br><span class="line">person1.greet()  <span class="comment"># 输出: Hello, my name is Alice and I am 31 years old.</span></span><br></pre></td></tr></table></figure></div>
+<p>在这里，update_age 方法使用 self 来修改 age 属性。</p>
+<p><strong>调用其他方法</strong>： self 可以用来在一个实例内部调用其他的方法。这是组织复杂行为和代码复用的一种方式。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update_age_and_greet</span>(<span class="params">self, new_age</span>):</span><br><span class="line">        self.update_age(new_age)</span><br><span class="line">        self.greet()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用update_age_and_greet方法更新年龄并打招呼</span></span><br><span class="line">person1.update_age_and_greet(<span class="number">32</span>)  <span class="comment"># 输出: My new age is 32. Hello, my name is Alice and I am 32 years old.</span></span><br></pre></td></tr></table></figure></div>
+<p>这个例子中，update_age_and_greet 方法内部调用了 update_age 和 greet 方法，展示了如何通过 self 调用同一个类的其他方法。</p>
+<p>通过这些应用，self 在Python的类定义中扮演着极其重要的角色，使得对象可以通过方法操作其内部数据，实现封装和接口的抽象。</p>
+<p>目前就先这些了，其他随缘！！！</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> python的那些小知识</li>
+        <li><strong>Author:</strong> SatonoD</li>
+        <li><strong>Created at
+                :</strong> 2024-05-10 10:04:53</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-05-10 17:02:52
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/05/10/python的那些小知识/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/05/10/proCAST%E5%B8%B8%E8%A7%81%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">proCAST常见疑难杂症及其解决方案汇总</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/05/08/git%E7%9B%B8%E5%85%B3/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">git相关</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">python的那些小知识</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">Python的基本数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-array%E4%B8%8Elist%E7%9A%84%E5%8C%BA%E5%88%AB-%E4%BC%98%E5%8A%BF"><span class="nav-text">numpy.array与list的区别&#x2F;优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">python数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break%E5%92%8CContinuous%E5%8C%BA%E5%88%AB"><span class="nav-text">Break和Continuous区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#return-%E5%92%8C-yield%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">return 和 yield的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E4%B8%AD%E7%9A%84%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="nav-text">python中的浅拷贝和深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range-%E5%92%8C-xrange%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">range 和 xrange的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#is%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">is和&#x3D;&#x3D;的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-%E5%87%BD%E6%95%B0"><span class="nav-text">lambda 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E3%80%81%E4%B8%89%E5%BC%95%E5%8F%B7%E5%8C%BA%E5%88%AB"><span class="nav-text">单引号、双引号、三引号区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-%E4%B8%AD%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="nav-text">python 中传入参数的注意事项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">函数和变量的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="nav-text">解释型语言和编译型语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new-%E5%92%8C-init"><span class="nav-text">new 和 init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E4%B8%ADself%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B6%E4%B8%89%E7%A7%8D%E5%BA%94%E7%94%A8"><span class="nav-text">类中self的概念及其三种应用</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">SatonoD</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        23 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
